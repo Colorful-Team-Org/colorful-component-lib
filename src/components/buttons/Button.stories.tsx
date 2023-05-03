@@ -1,16 +1,15 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import HelloWorld from '../components/HelloWorld';
-import './tailwindcss.css';
+import Button from './Button';
 
 const meta = {
-  component: HelloWorld,
-} satisfies Meta<typeof HelloWorld>;
+  component: Button,
+} satisfies Meta<typeof Button>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  render: () => <HelloWorld />,
+  render: () => <Button>Button label</Button>,
 };
