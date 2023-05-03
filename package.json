@@ -27,7 +27,6 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/react": "^18.2.0",
     "autoprefixer": "^10.4.14",
-    "clsx": "^1.2.1",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-react-app": "^7.0.1",
@@ -46,6 +45,9 @@
     "storybook": "^7.0.7",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",
