@@ -1,1 +1,3 @@
-export { default as HelloWorld }  from './HelloWorld';
+export * from './heroes';
+export * from './buttons';
+export { default as Image } from './Image';
