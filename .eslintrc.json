@@ -1,0 +1,11 @@
+{
+  "extends": ["eslint:recommended", "react-app", "plugin:react-hooks/recommended", "prettier"],
+  "plugins": ["prettier", "react-hooks"],
+  "rules": {
+    "prettier/prettier": ["warn"]
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  }
+}
