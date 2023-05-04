@@ -3,7 +3,6 @@ import { PropsWithChildren } from 'react';
 import Image, { ImageProps } from '../Image';
 // import { CtfImage, CtfRichtext } from 'features/contentful-api/graphql/contentful-graphql-types';
 // import { RichText } from 'features/ctf-richtext/components/RichText';
-import { Maybe } from 'utils/typing-utils';
 import Button from '../buttons/Button';
 
 export interface ColorConfig {
@@ -13,12 +12,12 @@ export interface ColorConfig {
 }
 
 interface Props {
-  headline?: Maybe<string>;
-  image?: Maybe<ImageProps>;
-  cta?: Maybe<{
+  headline?: string;
+  image?: ImageProps;
+  cta?: {
     text: string;
     href?: string;
-  }>;
+  };
   fullHeight?: boolean;
   inverted?: boolean;
   className?: string;

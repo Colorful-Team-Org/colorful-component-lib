@@ -1,16 +1,15 @@
 import { CSSProperties, useMemo } from 'react';
-import { Maybe } from 'utils/typing-utils';
 
 export interface ImageProps {
-  title?: Maybe<string>;
-  src?: Maybe<string>;
-  alt?: Maybe<string>;
-  width?: Maybe<number>;
-  height?: Maybe<number>;
-  sizes?: Maybe<string>;
+  title?: string;
+  src?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
   unoptimized?: boolean;
   priority?: boolean;
-  focalPoint?: Maybe<{ x: number; y: number }>;
+  focalPoint?: { x: number; y: number };
   imageStyle?: CSSProperties;
   fill?: boolean;
   className?: string;
