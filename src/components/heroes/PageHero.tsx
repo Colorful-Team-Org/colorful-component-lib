@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { PropsWithChildren } from 'react';
+import { MouseEventHandler, PropsWithChildren } from 'react';
 import Image, { ImageProps } from '../Image';
 // import { CtfImage, CtfRichtext } from 'features/contentful-api/graphql/contentful-graphql-types';
 // import { RichText } from 'features/ctf-richtext/components/RichText';
@@ -21,6 +21,7 @@ interface Props {
   fullHeight?: boolean;
   inverted?: boolean;
   className?: string;
+  onLinkClick?: MouseEventHandler<HTMLAnchorElement>;
 }
 
 export default function PageHero(props: PropsWithChildren<Props>) {
@@ -62,7 +63,9 @@ export default function PageHero(props: PropsWithChildren<Props>) {
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                 <Button inverted={props.inverted}>
-                  <a href={props.cta.href || '#'}>{props.cta.text}</a>
+                  <a href={props.cta.href || '#'} onClick={props.onLinkClick}>
+                    {props.cta.text}
+                  </a>
                 </Button>
               </div>
             </div>

@@ -47,6 +47,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "cf-colorful-component-library": "github:Colorful-Team-Org/colorful-component-lib",
     "clsx": "^1.2.1"
   },
   "peerDependencies": {
