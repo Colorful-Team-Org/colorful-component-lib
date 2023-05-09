@@ -54,7 +54,13 @@ module.exports = plugin(null, {
           400: '#8DBAD8',
           600: '#73A8C6',
         },
-      }
+      },
+      maxWidth: {
+        'prose-wide': '50rem',
+      },
+      minHeight: {
+        headersection: '26.5rem',
+      },
     },
     aspectRatio: {
       '10/6': '10 / 6',
