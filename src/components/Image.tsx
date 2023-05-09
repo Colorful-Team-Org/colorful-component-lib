@@ -3,12 +3,12 @@ import { CSSProperties, useMemo } from 'react';
 export interface ImageProps {
   title?: string;
   src?: string;
+  srcset?: string;
+  sizes?: string;
   alt?: string;
   width?: number;
   height?: number;
-  sizes?: string;
   unoptimized?: boolean;
-  priority?: boolean;
   focalPoint?: { x: number; y: number };
   imageStyle?: CSSProperties;
   fill?: boolean;
@@ -18,7 +18,7 @@ export interface ImageProps {
 export default function Image(props: ImageProps) {
   const dimensionProps = props.fill
     ? { width: '100%', height: '100%' }
-    : { width: props.width || 1024, height: props.height || 768 };
+    : { width: props.width, height: props.height };
 
   const focalPoint = useMemo(() => {
     if (!props.focalPoint || !props?.width || !props.height) return;
@@ -29,6 +29,8 @@ export default function Image(props: ImageProps) {
 
   if (!props.src) return null;
 
+  const responsiveConfig = !props.unoptimized ? { sizes: props.sizes, srcset: props.srcset } : {};
+
   return (
     <img
       className={props.className}
@@ -36,7 +38,7 @@ export default function Image(props: ImageProps) {
       {...dimensionProps}
       alt={props.alt || props.title || ''}
       title={props.title || undefined}
-      sizes={props.sizes || `100vw`}
+      {...responsiveConfig}
       style={{
         ...props.imageStyle,
         objectFit: 'cover',
