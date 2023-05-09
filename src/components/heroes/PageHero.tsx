@@ -4,7 +4,7 @@ import Image, { ImageProps } from '../Image';
 // import { CtfImage, CtfRichtext } from 'features/contentful-api/graphql/contentful-graphql-types';
 // import { RichText } from 'features/ctf-richtext/components/RichText';
 import Button from '../buttons/Button';
-import Heading from '../headlines/Heading';
+import Heading from '../typo/Heading';
 
 export interface ColorConfig {
   textColorClass: string;
