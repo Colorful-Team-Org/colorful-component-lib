@@ -57,7 +57,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
       <div className="relative z-20 mx-auto grid h-full w-full max-w-6xl grid-cols-1 items-center gap-8 sm:grid-cols-2">
         {/* Text content and cta button */}
         <div className="px-4 md:px-8 lg:pr-4 xl:pr-16">
-          <Heading lvl={2} className={textColor} {...props.headlineFieldProps}>
+          <Heading lvl={2} margin className={textColor} {...props.headlineFieldProps}>
             {props.headline}
           </Heading>
           <div className={textColor}>{props.children}</div>
