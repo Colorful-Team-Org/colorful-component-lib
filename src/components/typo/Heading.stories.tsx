@@ -30,7 +30,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Overview: Story = {
   render: args => (
     <div>
       <Heading lvl={1} {...args}>

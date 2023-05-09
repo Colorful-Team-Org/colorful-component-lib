@@ -3,6 +3,7 @@
 import clsx from 'clsx';
 import Image, { ImageProps } from './Image';
 import { PropsWithChildren } from 'react';
+import { Heading } from './typo';
 
 type Props = {
   headline?: string;
@@ -20,14 +21,14 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
   return (
     <div
       className={clsx(
-        `md:min-h-headersection relative flex min-h-[256px] items-center py-8 md:py-0 overflow-hidden`,
+        `relative flex min-h-[256px] items-center overflow-hidden py-8 md:min-h-headersection md:py-0`,
         !props.transparent && 'bg-gray-100',
         props.className
       )}
     >
       {props.image?.src && (
         <Image
-          className="full-w z-0 object-cover absolute top-0 left-0"
+          className="full-w absolute left-0 top-0 z-0 object-cover"
           loadingSkeleton
           fill
           {...props.image}
@@ -43,12 +44,13 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
             </h3>
           )}
           {!!props.headline && (
-            <h2
+            <Heading
+              lvl={2}
               className="mt-1 text-4xl font-bold tracking-tight text-gray-900"
               {...props.headlineFieldProps}
             >
               {props.headline}
-            </h2>
+            </Heading>
           )}
           {!!props.children &&
             (typeof props.children === 'string' ? (
