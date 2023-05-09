@@ -12,11 +12,12 @@ export interface ImageProps {
   focalPoint?: { x: number; y: number };
   imageStyle?: CSSProperties;
   fill?: boolean;
+  loadingSkeleton?: boolean;
   className?: string;
 }
 export default function Image(props: ImageProps) {
   const dimensionProps = props.fill
-    ? { fill: true }
+    ? { width: '100%', height: '100%' }
     : { width: props.width || 1024, height: props.height || 768 };
 
   const focalPoint = useMemo(() => {
