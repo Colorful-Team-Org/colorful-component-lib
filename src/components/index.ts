@@ -8,3 +8,4 @@ export * from './Image';
 export { default as Author } from './Author';
 export { default as TagList } from './TagList';
 export { default as Pill } from './Pill';
+export { default as HeaderSection } from './HeaderSection';
