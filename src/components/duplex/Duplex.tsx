@@ -6,6 +6,7 @@ import PageSectionContainer from '../PageSectionContainer';
 import Button from '../buttons/Button';
 import DotsBackground from './DotsBackground';
 import color from 'color';
+import { optimizeLineBreak } from '../../utils/string-utils';
 
 type Props = {
   headline: string;
@@ -75,7 +76,7 @@ export default function Duplex(props: PropsWithChildren<Props>) {
               {headline && (
                 <div className="max-w-3xl">
                   <Heading lvl={2} className={textColorClass} tagProps={headlineTagProps}>
-                    {headline}
+                    {optimizeLineBreak(headline)}
                   </Heading>
                 </div>
               )}
