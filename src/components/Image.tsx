@@ -3,7 +3,7 @@ import { CSSProperties, useMemo } from 'react';
 export interface ImageProps {
   title?: string;
   src?: string;
-  srcset?: string;
+  srcSet?: string;
   sizes?: string;
   alt?: string;
   width?: number;
@@ -14,6 +14,7 @@ export interface ImageProps {
   fill?: boolean;
   loadingSkeleton?: boolean;
   className?: string;
+  tagProps?: any;
 }
 export default function Image(props: ImageProps) {
   const dimensionProps = props.fill
@@ -29,7 +30,7 @@ export default function Image(props: ImageProps) {
 
   if (!props.src) return null;
 
-  const responsiveConfig = !props.unoptimized ? { sizes: props.sizes, srcset: props.srcset } : {};
+  const responsiveConfig = !props.unoptimized ? { sizes: props.sizes, srcSet: props.srcSet } : {};
 
   return (
     <img
@@ -44,6 +45,7 @@ export default function Image(props: ImageProps) {
         objectFit: 'cover',
         objectPosition: focalPoint?.map(p => `${p}%`).join(' '),
       }}
+      {...props.tagProps}
     />
   );
 }

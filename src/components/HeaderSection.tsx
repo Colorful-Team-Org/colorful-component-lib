@@ -31,7 +31,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
           loadingSkeleton
           fill
           {...props.image}
-          {...props.imageTagProps}
+          tagProps={props.imageTagProps}
         />
       )}
       {/* <div className={clsx('max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative', vSpacingClass)}> */}
@@ -46,7 +46,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
             <Heading
               lvl={2}
               className="mt-1 text-4xl font-bold tracking-tight text-gray-900"
-              {...props.headlineTagProps}
+              tagProps={props.headlineTagProps}
             >
               {props.headline}
             </Heading>
