@@ -4,6 +4,7 @@ import TagList from './TagList';
 
 const meta = {
   component: TagList,
+  title: 'Components/TagList',
 } satisfies Meta<typeof TagList>;
 
 export default meta;

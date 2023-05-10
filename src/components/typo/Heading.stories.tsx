@@ -4,6 +4,7 @@ import Heading from './Heading';
 
 const meta = {
   component: Heading,
+  title: 'Components/Heading',
   argTypes: {
     lvl: {
       control: {

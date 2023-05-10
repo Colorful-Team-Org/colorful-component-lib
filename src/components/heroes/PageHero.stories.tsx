@@ -5,6 +5,7 @@ import PageHero from './PageHero';
 
 const meta = {
   component: PageHero,
+  title: 'Components/PageHero',
   argTypes: {
     headline: {
       type: 'string',

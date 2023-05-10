@@ -4,6 +4,7 @@ import HeaderSection from './HeaderSection';
 
 const meta = {
   component: HeaderSection,
+  title: 'Components/HeaderSection',
   args: {
     headline: 'This is a headline',
     overline: 'This is an overline',

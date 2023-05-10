@@ -4,6 +4,7 @@ import Duplex from './Duplex';
 
 const meta = {
   component: Duplex,
+  title: 'Components/Duplex',
   args: {
     headline: 'This is a headline',
     children: 'This is the content section of the Duplex component',
