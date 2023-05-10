@@ -17,7 +17,6 @@ type Props = {
 };
 export default function HeaderSection(props: PropsWithChildren<Props>) {
   // const vSpacingClass = !!props.transparent ? `my-16 sm:my-24` : `py-16 sm:py-24`;
-  console.log(props);
   return (
     <div
       className={clsx(
