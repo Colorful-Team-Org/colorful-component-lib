@@ -7,13 +7,13 @@ import { Heading } from './typo';
 
 type Props = {
   headline?: string;
-  headlineFieldProps?: any;
+  headlineTagProps?: any;
   overline?: string;
-  overlineFieldProps?: any;
+  overlineTagProps?: any;
   className?: string;
   transparent?: boolean;
   image?: ImageProps;
-  imageFieldProps?: any;
+  imageTagProps?: any;
 };
 export default function HeaderSection(props: PropsWithChildren<Props>) {
   // const vSpacingClass = !!props.transparent ? `my-16 sm:my-24` : `py-16 sm:py-24`;
@@ -32,14 +32,14 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
           loadingSkeleton
           fill
           {...props.image}
-          {...props.imageFieldProps}
+          {...props.imageTagProps}
         />
       )}
       {/* <div className={clsx('max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative', vSpacingClass)}> */}
       <div className={clsx('relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8')}>
         <div>
           {!!props.overline && (
-            <h3 className="text-primary-600 text-lg font-semibold" {...props.overlineFieldProps}>
+            <h3 className="text-primary-600 text-lg font-semibold" {...props.overlineTagProps}>
               {props.overline}
             </h3>
           )}
@@ -47,7 +47,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
             <Heading
               lvl={2}
               className="mt-1 text-4xl font-bold tracking-tight text-gray-900"
-              {...props.headlineFieldProps}
+              {...props.headlineTagProps}
             >
               {props.headline}
             </Heading>

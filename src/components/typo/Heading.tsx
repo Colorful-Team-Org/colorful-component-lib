@@ -21,6 +21,8 @@ interface Props {
 
   margin?: boolean;
   className?: string;
+
+  tagProps?: any;
 }
 export default function Heading(props: PropsWithChildren<Props>) {
   const { lvl = 1, className, margin, children } = props;
@@ -28,7 +30,10 @@ export default function Heading(props: PropsWithChildren<Props>) {
   const classLevel = (props.classLvl || lvl) - 1;
   const Tag: any = `h${tagLevel}`;
   return (
-    <Tag className={clsx(textClasses[classLevel], margin && marginClasses[classLevel], className)}>
+    <Tag
+      className={clsx(textClasses[classLevel], margin && marginClasses[classLevel], className)}
+      {...props.tagProps}
+    >
       {children}
     </Tag>
   );
