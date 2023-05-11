@@ -44,10 +44,10 @@ export default function Image(props: ImageProps) {
     <img
       className={props.className}
       src={props.src}
+      {...responsiveConfig}
       {...dimensionProps}
       alt={props.alt || props.title || ''}
       title={props.title || undefined}
-      {...responsiveConfig}
       style={{
         ...props.imageStyle,
         objectFit: 'cover',

@@ -15,7 +15,7 @@ export interface ColorConfig {
 interface Props {
   headline?: string;
   headlineTagProps?: any;
-  image?: ImageProps;
+  image?: Omit<ImageProps, 'sizes'>;
   imageTagProps?: any;
   cta?: {
     text: string;
@@ -90,6 +90,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
           <Image
             className="aspect-16/10 sm:aspect-auto w-full object-cover sm:hidden"
             {...props.image}
+            sizes="100vw"
             tagProps={props.imageTagProps}
           />
         )}
