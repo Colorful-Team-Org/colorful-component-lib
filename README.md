@@ -44,13 +44,13 @@ Since this library just uses tailwindcss you can just adjust stylings in your `t
 
 However this library also defined the following custom colors which are used through out the components and which you might want to override. These colors (and other styles) are defined in `./src/tailwind.plugin.js`. These colors are currently defined:
 
-* `cf-primary-50`
-* `cf-primary-100`
-* `cf-primary-200`
-* `cf-primary-400`
-* `cf-primary-500`
 * `cf-black`
+* `cf-primary`
+* `cf-primary-active`
+* `cf-primary-invert`
 * `cf-link`
+* `cf-link-active`
+* `cf-link-light`
 
 ## Fonts
 

@@ -20,14 +20,14 @@ export default function Button(props: Props) {
 
   /* only `primary` supported for now */
   const color = props.inverted
-    ? `bg-white text-cf-primary-600 hover:bg-cf-primary-200`
-    : `bg-cf-primary-600 hover:bg-cf-primary-700`;
+    ? `bg-white text-cf-primary hover:bg-cf-primary-invert`
+    : `bg-cf-primary hover:bg-cf-primary-active`;
 
   return (
     <button
       type="button"
       className={clsx(
-        `inline-flex items-center border border-transparent font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-cf-primary-500 focus:ring-offset-2`,
+        `focus:ring-cf-primary-500 inline-flex items-center border border-transparent font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2`,
         color,
         sizeClasses,
         props.className

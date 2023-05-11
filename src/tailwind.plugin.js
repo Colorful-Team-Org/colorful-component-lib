@@ -4,17 +4,13 @@ module.exports = plugin(null, {
   theme: {
     extend: {
       colors: {
-        'cf-primary-50': '#f9fafb',
-        'cf-primary-100': '#f3f4f6',
-        'cf-primary-200': '#e5e7eb',
-        'cf-primary-400': '#9ca3af',
-        'cf-primary-500': '#6b7280',
         'cf-black': '#101827',
-        'cf-link': {
-          200: '#7CAECC',
-          400: '#2680EB',
-          600: '#006EFF',
-        },
+        'cf-primary': '#000',
+        'cf-primary-active': '#6b7280',
+        'cf-primary-invert': '#e5e7eb',
+        'cf-link': '#2680EB',
+        'cf-link-light': '#7CAECC',
+        'cf-link-active': '#006EFF',
       },
       maxWidth: {
         'prose-wide': '50rem',

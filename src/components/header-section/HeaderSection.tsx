@@ -38,7 +38,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
       <div className={clsx('relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8')}>
         <div>
           {!!props.overline && (
-            <h3 className="text-primary-600 text-lg font-semibold" {...props.overlineTagProps}>
+            <h3 className="text-lg font-semibold text-gray-900" {...props.overlineTagProps}>
               {props.overline}
             </h3>
           )}
