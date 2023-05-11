@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Heading } from '../typo';
-import { MouseEventHandler, PropsWithChildren } from 'react';
-import Image, { ImageProps } from '../Image';
+import { MouseEventHandler, PropsWithChildren, useMemo } from 'react';
+import Image, { ImageProps, createImageSizes } from '../Image';
 import PageSectionContainer from '../PageSectionContainer';
 import Button from '../buttons/Button';
 import DotsBackground from './DotsBackground';
@@ -17,7 +17,7 @@ type Props = {
     href?: string;
   };
   ctaTagProps?: any;
-  image: ImageProps;
+  image: Omit<ImageProps, 'sizes'>;
   imageTagProps?: any;
   alignImageLeft?: boolean;
   backgroundColor?: string;
@@ -41,6 +41,11 @@ export default function Duplex(props: PropsWithChildren<Props>) {
 
   const isInverted = backgroundColor && color(backgroundColor).isDark();
   const textColorClass = isInverted ? 'text-white' : 'text-gray-900';
+
+  const imageSizes = useMemo(
+    () => (image.loader ? createImageSizes([['md', '50vw']], '100vw') : undefined),
+    [image.loader]
+  );
 
   return (
     <PageSectionContainer
@@ -100,7 +105,14 @@ export default function Duplex(props: PropsWithChildren<Props>) {
             </div>
           </div>
           <div className={clsx('sm:w-1/2', alignImageLeft ? 'sm:pr-10' : 'sm:pl-10')}>
-            {image && <Image className="w-full rounded-xl" {...image} tagProps={imageTagProps} />}
+            {image && (
+              <Image
+                className="w-full rounded-xl"
+                {...image}
+                sizes={imageSizes}
+                tagProps={imageTagProps}
+              />
+            )}
           </div>
         </div>
       </div>

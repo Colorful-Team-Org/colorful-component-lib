@@ -15,6 +15,7 @@ export interface ImageProps {
   loadingSkeleton?: boolean;
   className?: string;
   tagProps?: any;
+  loader?: (options: { src: string; width: number; quality?: number }) => string;
 }
 export default function Image(props: ImageProps) {
   const dimensionProps = props.fill
@@ -28,9 +29,16 @@ export default function Image(props: ImageProps) {
     return [(x / props.width) * 100, (y / props.height) * 100] as [number, number];
   }, [props.focalPoint, props.height, props.width]);
 
-  if (!props.src) return null;
+  const responsiveConfig = useMemo(() => {
+    if (props.unoptimized || !props.sizes || !props.src) return;
+    if (!props.srcSet && !props.loader) return;
+    return {
+      sizes: props.sizes,
+      srcSet: props.srcSet || createSrcSet(props.src, props.loader!),
+    } as { sizes: string; srcSet: string };
+  }, [props.loader, props.sizes, props.src, props.srcSet, props.unoptimized]);
 
-  const responsiveConfig = !props.unoptimized ? { sizes: props.sizes, srcSet: props.srcSet } : {};
+  if (!props.src) return null;
 
   return (
     <img
@@ -48,4 +56,43 @@ export default function Image(props: ImageProps) {
       {...props.tagProps}
     />
   );
+}
+
+const SRC_SET_DEFAULT_OPTIONS = {
+  widths: [320, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+  quality: 80,
+};
+export function createSrcSet(
+  src: string,
+  loader: Required<ImageProps>['loader'],
+  options?: Partial<typeof SRC_SET_DEFAULT_OPTIONS>
+) {
+  const { widths, quality } = { ...SRC_SET_DEFAULT_OPTIONS, ...options };
+  return widths.map(width => loader({ src, width, quality })).join(`, `);
+}
+
+// TODO get from tailwind config
+export const breakpoints = {
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  '2xl': 1536,
+};
+
+export function minBreakpoint(point: keyof typeof breakpoints) {
+  return `(min-width: ${breakpoints[point]}px)`;
+}
+export function maxBreakpoint(point: keyof typeof breakpoints) {
+  return `(max-width: ${breakpoints[point] - 1}px)`;
+}
+
+type WidthUnit = `${number}${'vw' | 'px'}`;
+
+type ResponsiveImgSizes = [keyof typeof breakpoints, WidthUnit][];
+
+export function createImageSizes(sizes: ResponsiveImgSizes, fallback: WidthUnit = `100vw`) {
+  let result = sizes.map(s => `${maxBreakpoint(s[0])} ${s[1]}`).join(`, `);
+  if (fallback) result += `, ${fallback}`;
+  return result;
 }
