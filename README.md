@@ -1,8 +1,8 @@
 # Colorful component library
 
-This library contains react components which can be used to render a typical marketing or commercial website. It was created to support creating Demo websites which are of our Colorful Demo Project.
+This library contains react components which can be used to render a typical marketing or commercial website. It was created to support creating Demo websites of our Colorful Demo Project.
 
-I is designed to use as less dependencies as possible to maximize compatibility. So even usually our Colorful websites are build using NextJS and Contantful we are still avoiding adding these projects as a dependency. The only peer dependencies therefore are [tailwindcss](https://tailwindcss.com) and [React](https://react.dev). So technically this library can be used with any project which uses _tailwindcss_.
+It is designed to use as less dependencies as possible to maximize compatibility. So even usually our Colorful websites are build using NextJS and Contantful we are still avoiding adding these projects as a dependency. The only peer dependencies therefore are [tailwindcss](https://tailwindcss.com) and [React](https://react.dev). So technically this library can be used with any project which uses _tailwindcss_.
 
 ## Installation
 
