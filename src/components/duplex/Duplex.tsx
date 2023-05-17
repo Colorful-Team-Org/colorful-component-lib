@@ -54,7 +54,7 @@ export default function Duplex(props: PropsWithChildren<Props>) {
         backgroundColor: backgroundColor,
       }}
     >
-      <div className="relative px-4 sm:px-6 lg:px-8">
+      <div className="relative px-4 font-sans sm:px-6 lg:px-8">
         <DotsBackground
           className={clsx(
             `absolute hidden -translate-y-1/4 transform lg:block`,

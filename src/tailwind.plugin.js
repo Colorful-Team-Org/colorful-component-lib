@@ -3,6 +3,10 @@ const plugin = require('tailwindcss/plugin');
 module.exports = plugin(null, {
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+        headline: ['Archivo', 'sans-serif'],
+      },
       colors: {
         'cf-black': '#101827',
         'cf-primary': '#000',

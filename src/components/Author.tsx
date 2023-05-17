@@ -9,8 +9,8 @@ type Props = {
 };
 export default function Author(props: Props) {
   return (
-    <div className={clsx('inline-flex min-w-[14rem]', props.className)}>
-      <Image className="w-11 h-11 rounded-full" loadingSkeleton {...props.image} sizes="100px" />
+    <div className={clsx('inline-flex min-w-[14rem] font-sans', props.className)}>
+      <Image className="h-11 w-11 rounded-full" loadingSkeleton {...props.image} sizes="100px" />
       <div className="ml-3">
         <p className="font-medium text-gray-700">{props.name}</p>
         {props.role && <p className="text-gray-500">{props.role}</p>}

@@ -42,6 +42,8 @@ module.exports = {
 
 Since this library just uses tailwindcss you can just adjust stylings in your `tailwind.config.js` file (see https://tailwindcss.com/docs/configuration).
 
+### colors
+
 However this library also defined the following custom colors which are used through out the components and which you might want to override. These colors (and other styles) are defined in `./src/tailwind.plugin.js`. These colors are currently defined:
 
 * `cf-black`
@@ -51,6 +53,27 @@ However this library also defined the following custom colors which are used thr
 * `cf-link`
 * `cf-link-active`
 * `cf-link-light`
+
+### Fonts
+
+As you can see in `./src/tailwind.plugin.js` fonts are configured as follows:
+
+```js
+//...
+theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+        headline: ['Archivo', 'sans-serif'],
+      }
+    }
+}
+//...
+```
+
+I does not do any font loading. So even if you do not want to override these font families in the theme you still have to load these fonts (`Roboto` and `Archivo` are google fonts) if you want to use them.
+
+
 
 ## Fonts
 

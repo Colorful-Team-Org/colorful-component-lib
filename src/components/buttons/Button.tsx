@@ -27,7 +27,7 @@ export default function Button(props: Props) {
     <button
       type="button"
       className={clsx(
-        `focus:ring-cf-primary-500 inline-flex items-center border border-transparent font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2`,
+        `focus:ring-cf-primary-500 inline-flex items-center border border-transparent font-sans font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2`,
         color,
         sizeClasses,
         props.className

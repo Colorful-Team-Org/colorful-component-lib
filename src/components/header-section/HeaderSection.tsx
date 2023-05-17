@@ -20,7 +20,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
   return (
     <div
       className={clsx(
-        `relative flex min-h-[256px] items-center overflow-hidden py-8 md:min-h-headersection md:py-0`,
+        `relative flex min-h-[256px] items-center overflow-hidden py-8 font-sans md:min-h-headersection md:py-0`,
         !props.transparent && 'bg-gray-100',
         props.className
       )}
