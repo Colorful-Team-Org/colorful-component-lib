@@ -8,13 +8,13 @@ const meta = {
   args: {
     postName: 'Blog post card',
     image: {
-      src: 'https://picsum.photos/1280/768',
+      src: 'https://picsum.photos/1024/768',
     },
     category: 'Blog category',
     author: {
       name: 'Author name',
       avatar: {
-        src: 'https://picsum.photos/1280/768',
+        src: 'https://picsum.photos/1024/768',
       },
     },
   },

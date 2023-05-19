@@ -8,13 +8,13 @@ import { MouseEventHandler, useMemo } from 'react';
 // TODO Link for categoryName(?)
 
 type Props = {
-  image: ImageProps;
+  image?: ImageProps;
   href?: string;
-  category: string;
+  category?: string;
   categoryHref?: string;
   categoryTagProps?: any;
   postName: string;
-  postNameTagProps: any;
+  postNameTagProps?: any;
   author?: {
     name: string;
     avatar?: ImageProps;
@@ -33,8 +33,15 @@ export default function BlogPostCard(props: Props) {
   const imageSizes = useMemo(
     () =>
       // TODO check if this sizes are correct
-      props.image.sizes ?? createImageSizes([['md', '100vw']], '33vw'),
-    [props.image.sizes]
+      props.image?.sizes ??
+      createImageSizes(
+        [
+          ['sm', '100vw'],
+          ['md', '50vw'],
+        ],
+        '33vw'
+      ),
+    [props.image?.sizes]
   );
   // const lang = locale ? locale.split('-')[0] : 'en';
 
