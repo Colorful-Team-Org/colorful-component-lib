@@ -34,7 +34,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
     <div
       className={clsx(
         `relative overflow-hidden pt-8 font-sans sm:pb-20 sm:pt-16 lg:py-48`,
-        props.fullHeight && `md:h-[calc(100vh-var(--header-height))]`,
+        props.fullHeight && `md:h-screen`,
         props.className
       )}
     >
