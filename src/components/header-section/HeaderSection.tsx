@@ -14,6 +14,7 @@ type Props = {
   transparent?: boolean;
   image?: ImageProps;
   imageTagProps?: any;
+  childrenTagProps?: any;
 };
 export default function HeaderSection(props: PropsWithChildren<Props>) {
   // const vSpacingClass = !!props.transparent ? `my-16 sm:my-24` : `py-16 sm:py-24`;
@@ -53,7 +54,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
           )}
           {!!props.children &&
             (typeof props.children === 'string' ? (
-              <p className="mt-5 max-w-xl text-xl text-gray-500">{props.children}</p>
+              <p className="mt-5 max-w-xl text-xl text-gray-500" {...props.childrenTagProps}>{props.children}</p>
             ) : (
               props.children
             ))}
