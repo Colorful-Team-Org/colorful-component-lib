@@ -31,6 +31,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
           className="full-w absolute left-0 top-0 z-0 object-cover"
           loadingSkeleton
           fill
+          sizes="100vw"
           {...props.image}
           tagProps={props.imageTagProps}
         />
@@ -54,7 +55,9 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
           )}
           {!!props.children &&
             (typeof props.children === 'string' ? (
-              <p className="mt-5 max-w-xl text-xl text-gray-500" {...props.childrenTagProps}>{props.children}</p>
+              <p className="mt-5 max-w-xl text-xl text-gray-500" {...props.childrenTagProps}>
+                {props.children}
+              </p>
             ) : (
               props.children
             ))}
