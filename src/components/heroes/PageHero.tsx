@@ -42,6 +42,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
         {props.image && (
           <Image
             className="absolute inset-0 h-full w-full object-cover"
+            sizes="100vw"
             {...props.image}
             tagProps={props.imageTagProps}
           />
