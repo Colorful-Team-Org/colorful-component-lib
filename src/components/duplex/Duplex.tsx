@@ -43,7 +43,7 @@ export default function Duplex(props: PropsWithChildren<Props>) {
   const textColorClass = isInverted ? 'text-white' : 'text-gray-900';
 
   const imageSizes = useMemo(
-    () => (image.loader ? createImageSizes([['md', '50vw']], '100vw') : undefined),
+    () => (image.loader ? createImageSizes([['md', '100vw']], '50vw') : undefined),
     [image.loader]
   );
 
