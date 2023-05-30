@@ -39,9 +39,9 @@ export default function Testimonial(props: PropsWithChildren<Props>) {
           />
         )}
         <blockquote className={clsx(`mt-6`, textColorClass)}>
-          <p className={clsx('mt-6 text-2xl font-medium', !!props.textCentered && `text-center`)}>
+          <div className={clsx('mt-6 text-2xl font-medium', !!props.textCentered && `text-center`)}>
             {props.children}
-          </p>
+          </div>
         </blockquote>
         {props.footer && <footer className={clsx('mt-6', textColorClass)}>{props.footer}</footer>}
       </div>
