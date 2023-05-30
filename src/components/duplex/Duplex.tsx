@@ -49,7 +49,8 @@ export default function Duplex(props: PropsWithChildren<Props>) {
 
   return (
     <PageSectionContainer
-      withYPadding={!!backgroundColor}
+      withYMargin={!backgroundColor}
+      className="cful-duplex-root"
       style={{
         backgroundColor: backgroundColor,
       }}
