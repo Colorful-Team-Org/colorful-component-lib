@@ -22,12 +22,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  render: args => <Duplex {...args}>This is the content section of the Hero component</Duplex>,
+  render: args => <Duplex {...args}>This is the content section of the Duplex component</Duplex>,
 };
 export const Inverted: Story = {
   args: {
     alignImageLeft: true,
     backgroundColor: '#414a50',
   },
-  render: args => <Duplex {...args}>This is the content section of the Hero component</Duplex>,
+  render: args => <Duplex {...args}>This is the content section of the Duplex component</Duplex>,
 };

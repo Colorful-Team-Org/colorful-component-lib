@@ -10,6 +10,7 @@ export { default as TagList } from './tag/TagList';
 export { default as Pill } from './tag/Pill';
 export { default as HeaderSection } from './header-section/HeaderSection';
 export { default as Duplex } from './duplex/Duplex';
+export { default as CTA } from './cta/CTA';
 
 export * from './blog';
 export * from './grid';
