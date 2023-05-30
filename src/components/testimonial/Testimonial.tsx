@@ -7,10 +7,13 @@ import PageSectionContainer from '../PageSectionContainer';
 type Props = {
   // author?: AuthorProps;
   logo?: ImageProps;
+  logoTagProps?: any;
   footer?: ReactElement;
+  footerTagProps?: any;
   backgroundColor?: string;
   textColor?: string;
   textCentered?: boolean;
+  childrenTagProps?: any;
 };
 
 export default function Testimonial(props: PropsWithChildren<Props>) {
