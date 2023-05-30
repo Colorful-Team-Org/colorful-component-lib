@@ -38,12 +38,14 @@ export default function Testimonial(props: PropsWithChildren<Props>) {
             sizes={props.logo.sizes ?? '100px'}
           />
         )}
-        <blockquote className={clsx(`mt-6`, textColorClass)}>
+        <blockquote className={clsx(`mt-6 font-sans`, textColorClass)}>
           <div className={clsx('mt-6 text-2xl font-medium', !!props.textCentered && `text-center`)}>
             {props.children}
           </div>
         </blockquote>
-        {props.footer && <footer className={clsx('mt-6', textColorClass)}>{props.footer}</footer>}
+        {props.footer && (
+          <footer className={clsx('mt-6 font-sans', textColorClass)}>{props.footer}</footer>
+        )}
       </div>
     </PageSectionContainer>
   );
