@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import Image, { ImageProps } from './Image';
 
-type Props = {
+export type AuthorProps = {
   name: string;
   role?: string | null;
   image: Omit<ImageProps, 'sizes'>;
   className?: string;
 };
-export default function Author(props: Props) {
+export default function Author(props: AuthorProps) {
   return (
     <div className={clsx('inline-flex min-w-[14rem] font-sans', props.className)}>
       <Image className="h-11 w-11 rounded-full" loadingSkeleton {...props.image} sizes="100px" />

@@ -31,7 +31,11 @@ export default function Cta(props: PropsWithChildren<Props>) {
 
   return (
     <div
-      className={clsx(`w-full bg-primary-700`, textColorClass, props.className)}
+      className={clsx(
+        `cful-cta-root bg-primary-700 w-full font-sans`,
+        textColorClass,
+        props.className
+      )}
       style={{ backgroundColor: props.backgroundColor }}
     >
       <div className="mx-auto max-w-2xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
