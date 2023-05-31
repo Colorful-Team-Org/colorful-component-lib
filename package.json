@@ -47,6 +47,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "cf-colorful-component-library": "github:Colorful-Team-Org/colorful-component-lib",
     "clsx": "^1.2.1",
     "color": "^4.2.3"
