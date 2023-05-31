@@ -18,9 +18,9 @@ type Props = {
 } & DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
 
 export default function Select(props: Props) {
-  const { className, label, options, ...selectProps } = props;
+  const { className, label, options, inverted, ...selectProps } = props;
   const colorClassNames =
-    props.textColorClassName ?? props.inverted
+    props.textColorClassName ?? inverted
       ? 'text-white border-white bg-transparent'
       : 'text-cf-primary border-cf-primary bg-transparent';
   return (
