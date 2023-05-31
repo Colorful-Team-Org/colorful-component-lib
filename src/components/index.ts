@@ -15,3 +15,4 @@ export { default as Testimonial } from './testimonial/Testimonial';
 
 export * from './blog';
 export * from './grid';
+export * from './form';
