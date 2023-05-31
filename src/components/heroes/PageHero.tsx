@@ -22,6 +22,7 @@ interface Props {
     href?: string;
   };
   ctaTagProps?: any;
+  childrenTagProps?: any;
   fullHeight?: boolean;
   inverted?: boolean;
   className?: string;
@@ -33,7 +34,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
   return (
     <div
       className={clsx(
-        `relative overflow-hidden pt-8 font-sans sm:pb-20 sm:pt-16 lg:py-48`,
+        `cful-pagehero-root relative overflow-hidden pt-8 font-sans sm:pb-20 sm:pt-16 lg:py-48`,
         props.fullHeight && `md:h-screen`,
         props.className
       )}
@@ -62,7 +63,9 @@ export default function PageHero(props: PropsWithChildren<Props>) {
           <Heading lvl={2} margin className={textColor} tagProps={props.headlineTagProps}>
             {props.headline}
           </Heading>
-          <div className={textColor}>{props.children}</div>
+          <div className={textColor} {...props.childrenTagProps}>
+            {props.children}
+          </div>
           {/* // <RichText
             //   {...props.body}
             //   className={clsx('mx-auto mt-5', props.colorConfig?.textColorClass)}
