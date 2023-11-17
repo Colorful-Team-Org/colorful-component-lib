@@ -1,7 +1,6 @@
 {
-  "name": "colorful-component-lib",
+  "name": "@colorful-team-org/colorful-component-lib",
   "version": "0.1.0",
-  "private": true,
   "license": "unlicensed",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -50,7 +49,6 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "cf-colorful-component-library": "github:Colorful-Team-Org/colorful-component-lib",
     "clsx": "^1.2.1",
     "color": "^4.2.3"
   },
@@ -70,10 +68,10 @@
     "watch:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css --watch"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@Colorful-Team-Org"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Colorful-Team-Org/colorful-component-lib.git"
+    "url": "git@github.com:Colorful-Team-Org/colorful-component-lib.git"
   }
 }

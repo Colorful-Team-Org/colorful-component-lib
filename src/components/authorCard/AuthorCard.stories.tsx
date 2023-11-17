@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { AuthorCard } from 'cf-colorful-component-library';
+import AuthorCard from './AuthorCard';
 
 const meta = {
   component: AuthorCard,
