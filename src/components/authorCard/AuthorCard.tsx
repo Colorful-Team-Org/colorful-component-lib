@@ -7,7 +7,7 @@ export type AuthorProps = {
   image: Omit<ImageProps, 'sizes'>;
   className?: string;
 };
-export default function Author(props: AuthorProps) {
+export default function AuthorCard(props: AuthorProps) {
   return (
     <div className={clsx('inline-flex min-w-[14rem] font-sans', props.className)}>
       <Image className="h-11 w-11 rounded-full" loadingSkeleton {...props.image} sizes="100px" />

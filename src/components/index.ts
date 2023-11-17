@@ -5,7 +5,7 @@ export * from './heroes';
 export { default as Image } from './image/Image';
 export * from './image/Image';
 
-export { default as Author } from './author/Author';
+export { default as AuthorCard } from './authorCard/AuthorCard';
 export { default as TagList } from './tag/TagList';
 export { default as Pill } from './tag/components/pill/Pill';
 export { default as HeaderSection } from './headerSection/HeaderSection';
