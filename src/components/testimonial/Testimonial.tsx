@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import { PropsWithChildren, ReactElement, useMemo } from 'react';
 import color from 'color';

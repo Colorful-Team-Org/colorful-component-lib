@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import { MouseEventHandler, PropsWithChildren } from 'react';
 import Image, { ImageProps } from '../image/Image';

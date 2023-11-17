@@ -1,3 +1,4 @@
+import React from 'react';
 import Pill from './components/pill/Pill';
 
 type Props = {

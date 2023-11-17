@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import Image, { ImageProps, createImageSizes } from '../image/Image';
 import { MouseEventHandler, useMemo } from 'react';

@@ -1,5 +1,5 @@
 /* Template from https://tailwindui.com/components/marketing/sections/header */
-
+import React from 'react';
 import clsx from 'clsx';
 import Image, { ImageProps } from '../image/Image';
 import { PropsWithChildren } from 'react';

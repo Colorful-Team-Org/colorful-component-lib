@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import { Heading } from '../heading';
 import { MouseEventHandler, PropsWithChildren, useMemo } from 'react';

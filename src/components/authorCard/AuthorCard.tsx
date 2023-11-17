@@ -1,3 +1,4 @@
+import React from 'react';
 import clsx from 'clsx';
 import Image, { ImageProps } from '../image/Image';
 const styles = {
