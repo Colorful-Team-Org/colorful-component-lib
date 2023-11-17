@@ -1,5 +1,5 @@
 {
-  "name": "cf-colorful-component-library",
+  "name": "@colorful-team-org/colorful-component-lib",
   "version": "0.1.0",
   "private": true,
   "license": "unlicensed",
@@ -64,9 +64,12 @@
   "scripts": {
     "prepare": "tsc",
     "build": "tsc",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -: 6006",
     "build:storybook": "storybook build",
     "build:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css",
     "watch:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css --watch"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
