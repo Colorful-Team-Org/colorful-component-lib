@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import CTA from './CTA';
+import CTA from './Cta';
 
 const meta = {
   component: CTA,

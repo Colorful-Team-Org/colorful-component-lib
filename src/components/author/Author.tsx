@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import Image, { ImageProps } from './Image';
+import Image, { ImageProps } from '../image/Image';
 
 export type AuthorProps = {
   name: string;

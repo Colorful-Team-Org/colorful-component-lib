@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { Heading } from '../typo';
+import { Heading } from '../heading';
 import { MouseEventHandler, PropsWithChildren, useMemo } from 'react';
-import Image, { ImageProps, createImageSizes } from '../Image';
-import PageSectionContainer from '../PageSectionContainer';
-import Button from '../buttons/Button';
-import DotsBackground from './DotsBackground';
+import Image, { ImageProps, createImageSizes } from '../image/Image';
+import PageSectionContainer from '../pageSectionContainer/PageSectionContainer';
+import Button from '../button/Button';
+import DotsBackground from './components/DotsBackground';
 import color from 'color';
 import { optimizeLineBreak } from '../../utils/string-utils';
 

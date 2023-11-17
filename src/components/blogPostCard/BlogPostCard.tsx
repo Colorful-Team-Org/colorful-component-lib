@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import Image, { ImageProps, createImageSizes } from '../Image';
+import Image, { ImageProps, createImageSizes } from '../image/Image';
 import { MouseEventHandler, useMemo } from 'react';
 
 /* This example requires Tailwind CSS v2.0+ */

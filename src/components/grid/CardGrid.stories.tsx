@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import CardGrid from './CardGrid';
-import BlogPostCard from '../blog/BlogPostCard';
+import BlogPostCard from '../blogPostCard/BlogPostCard';
 
 const meta = {
   component: CardGrid,

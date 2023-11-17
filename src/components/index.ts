@@ -1,18 +1,18 @@
-export * from './buttons';
-export * from './typo';
+export * from './button';
+export * from './heading';
 export * from './heroes';
 
-export { default as Image } from './Image';
-export * from './Image';
+export { default as Image } from './image/Image';
+export * from './image/Image';
 
-export { default as Author } from './Author';
+export { default as Author } from './author/Author';
 export { default as TagList } from './tag/TagList';
-export { default as Pill } from './tag/Pill';
-export { default as HeaderSection } from './header-section/HeaderSection';
+export { default as Pill } from './tag/components/pill/Pill';
+export { default as HeaderSection } from './headerSection/HeaderSection';
 export { default as Duplex } from './duplex/Duplex';
-export { default as CTA } from './cta/CTA';
+export { default as CTA } from './cta/Cta';
 export { default as Testimonial } from './testimonial/Testimonial';
 
-export * from './blog';
+export * from './blogPostCard';
 export * from './grid';
 export * from './form';

@@ -1,9 +1,9 @@
 /* Template from https://tailwindui.com/components/marketing/sections/header */
 
 import clsx from 'clsx';
-import Image, { ImageProps } from '../Image';
+import Image, { ImageProps } from '../image/Image';
 import { PropsWithChildren } from 'react';
-import { Heading } from '../typo';
+import { Heading } from '../heading';
 
 type Props = {
   headline?: string;

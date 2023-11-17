@@ -1,4 +1,4 @@
-import Pill from './Pill';
+import Pill from './components/pill/Pill';
 
 type Props = {
   items: { id: string; name: string }[];

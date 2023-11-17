@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { PropsWithChildren, ReactElement, useMemo } from 'react';
 import color from 'color';
-import Image, { ImageProps } from '../Image';
-import PageSectionContainer from '../PageSectionContainer';
+import Image, { ImageProps } from '../image/Image';
+import PageSectionContainer from '../pageSectionContainer/PageSectionContainer';
 
 type Props = {
   // author?: AuthorProps;

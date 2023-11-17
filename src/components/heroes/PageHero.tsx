@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import { MouseEventHandler, PropsWithChildren } from 'react';
-import Image, { ImageProps } from '../Image';
+import Image, { ImageProps } from '../image/Image';
 // import { CtfImage, CtfRichtext } from 'features/contentful-api/graphql/contentful-graphql-types';
 // import { RichText } from 'features/ctf-richtext/components/RichText';
-import Button from '../buttons/Button';
-import Heading from '../typo/Heading';
+import Button from '../button/Button';
+import Heading from '../heading/Heading';
 
 export interface ColorConfig {
   textColorClass: string;
