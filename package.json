@@ -1,5 +1,5 @@
 {
-  "name": "@colorful-team-org/colorful-component-lib",
+  "name": "colorful-component-lib",
   "version": "0.1.0",
   "private": true,
   "license": "unlicensed",
@@ -70,6 +70,10 @@
     "watch:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css --watch"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/@Colorful-Team-Org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Colorful-Team-Org/colorful-component-lib.git"
   }
 }
