@@ -10,7 +10,7 @@ export { default as TagList } from './tag/TagList';
 export { default as Pill } from './tag/components/pill/Pill';
 export { default as HeaderSection } from './headerSection/HeaderSection';
 export { default as Duplex } from './duplex/Duplex';
-export { default as Cta } from './cta/Cta';
+export { default as CTA } from './cta/CTA';
 export { default as Testimonial } from './testimonial/Testimonial';
 
 export * from './blogPostCard';

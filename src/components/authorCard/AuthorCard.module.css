@@ -1,0 +1,20 @@
+.authorCard {
+  display: inline-flex;
+
+  @apply min-w-[14rem];
+  @apply font-sans;
+}
+
+.authorCard > img {
+  @apply w-11 h-11 rounded-full; 
+}
+
+.authorCard .metaData p{
+  @apply font-medium;
+  @apply text-gray-700;
+}
+
+.authorCard .metaData p span {
+  @apply font-normal;
+  @apply text-gray-500;
+}

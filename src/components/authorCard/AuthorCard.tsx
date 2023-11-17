@@ -1,6 +1,9 @@
 import clsx from 'clsx';
 import Image, { ImageProps } from '../image/Image';
-
+const styles = {
+  authorCard: 'inline-flex min-w-[14rem] font-sans',
+  metaData: 'ml-3',
+};
 export type AuthorProps = {
   name: string;
   role?: string | null;
@@ -9,11 +12,13 @@ export type AuthorProps = {
 };
 export default function AuthorCard(props: AuthorProps) {
   return (
-    <div className={clsx('inline-flex min-w-[14rem] font-sans', props.className)}>
-      <Image className="h-11 w-11 rounded-full" loadingSkeleton {...props.image} sizes="100px" />
-      <div className="ml-3">
-        <p className="font-medium text-gray-700">{props.name}</p>
-        {props.role && <p className="text-gray-500">{props.role}</p>}
+    <div className={clsx(styles.authorCard, props.className)}>
+      <Image loadingSkeleton {...props.image} sizes="100px" />
+      <div className={styles.metaData}>
+        <p>
+          {props.name}
+          {props.role && <span>{props.role}</span>}
+        </p>
       </div>
     </div>
   );
