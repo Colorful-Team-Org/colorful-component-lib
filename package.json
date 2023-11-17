@@ -1,6 +1,6 @@
 {
   "name": "@colorful-team-org/colorful-component-lib",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "unlicensed",
   "main": "lib/cjs/index.js",
   "types": "lib/index.d.ts",
