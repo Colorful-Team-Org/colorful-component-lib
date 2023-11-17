@@ -78,3 +78,10 @@ I does not do any font loading. So even if you do not want to override these fon
 ## Fonts
 
 TODO
+
+## Development
+Make sure you have the github packages registry configured in your `~/.npmrc` file:
+
+```
+//npm.pkg.github.com/:_authToken=PERSONAL_ACCESS_TOKEN
+```

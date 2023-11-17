@@ -62,7 +62,7 @@
   "scripts": {
     "prepare": "tsc",
     "build": "tsc",
-    "storybook": "storybook dev -: 6006",
+    "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
     "build:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css",
     "watch:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css --watch"
