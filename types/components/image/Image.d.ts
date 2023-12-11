@@ -2,7 +2,7 @@ import React from 'react';
 import { CSSProperties } from 'react';
 export interface ImageProps {
     title?: string;
-    src?: string;
+    url?: string;
     srcSet?: string;
     sizes?: string;
     alt?: string;
@@ -18,6 +18,7 @@ export interface ImageProps {
     loadingSkeleton?: boolean;
     className?: string;
     tagProps?: any;
+    contentType?: string;
     loader?: (options: {
         src: string;
         width: number;

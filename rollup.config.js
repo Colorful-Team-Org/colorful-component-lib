@@ -28,17 +28,15 @@ const rollupConfig = [
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
-      terser(),
       postcss({
+        extensions: ['.css'],
+        minimize: true,
+        extract: true,
         config: {
           path: './postcss.config.js',
         },
-        extensions: ['.css'],
-        minimize: true,
-        inject: {
-          insertAt: 'top',
-        },
       }),
+      terser(),
     ],
     external: ['react', 'react-dom'],
   },
@@ -46,6 +44,7 @@ const rollupConfig = [
     input: 'src/index.ts',
     output: [{ file: 'lib/index.d.ts', format: 'es' }],
     plugins: [dts.default()],
+    external: [/\.css$/],
   },
 ];
 export default rollupConfig;

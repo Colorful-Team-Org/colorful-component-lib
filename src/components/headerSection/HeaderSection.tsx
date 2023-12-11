@@ -26,7 +26,7 @@ export default function HeaderSection(props: PropsWithChildren<Props>) {
         props.className
       )}
     >
-      {props.image?.src && (
+      {props.image?.url && (
         <Image
           className="full-w absolute left-0 top-0 z-0 object-cover"
           loadingSkeleton

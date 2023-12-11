@@ -3,7 +3,7 @@ import { CSSProperties, useMemo } from 'react';
 
 export interface ImageProps {
   title?: string;
-  src?: string;
+  url?: string;
   srcSet?: string;
   sizes?: string;
   alt?: string;
@@ -16,6 +16,7 @@ export interface ImageProps {
   loadingSkeleton?: boolean;
   className?: string;
   tagProps?: any;
+  contentType?: string;
   loader?: (options: { src: string; width: number; quality?: number }) => string;
 }
 export default function Image(props: ImageProps) {
@@ -31,20 +32,20 @@ export default function Image(props: ImageProps) {
   }, [props.focalPoint, props.height, props.width]);
 
   const responsiveConfig = useMemo(() => {
-    if (props.unoptimized || !props.sizes || !props.src) return;
+    if (props.unoptimized || !props.sizes || !props.url) return;
     if (!props.srcSet && !props.loader) return;
     return {
       sizes: props.sizes,
-      srcSet: props.srcSet || createSrcSet(props.src, props.loader!),
+      srcSet: props.srcSet || createSrcSet(props.url, props.loader!),
     } as { sizes: string; srcSet: string };
-  }, [props.loader, props.sizes, props.src, props.srcSet, props.unoptimized]);
+  }, [props.loader, props.sizes, props.url, props.srcSet, props.unoptimized]);
 
-  if (!props.src) return null;
+  if (!props.url) return null;
 
   return (
     <img
       className={props.className}
-      src={props.src}
+      src={props.url}
       {...responsiveConfig}
       {...dimensionProps}
       alt={props.alt || props.title || ''}

@@ -1,15 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
-
-export const textClasses = [
-  'font-headline text-5xl font-bold tracking-tight',
-  'font-headline text-4xl font-bold tracking-tight',
-  'font-headline text-3xl font-bold tracking-tight',
-  'font-headline text-2xl font-bold tracking-tight',
-  'font-headline text-lg font-bold tracking-tight',
-  'font-headline text- font-bold tracking-tight',
-];
+import styles from './Heading.module.css';
 
 export const marginClasses = ['mb-5', 'mb-5', 'mb-5', '', '', ''];
 
@@ -32,7 +24,12 @@ export default function Heading(props: PropsWithChildren<Props>) {
   const Tag: any = `h${tagLevel}`;
   return (
     <Tag
-      className={clsx(textClasses[classLevel], margin && marginClasses[classLevel], className)}
+      className={clsx(
+        styles[`h${tagLevel}`],
+        margin && marginClasses[classLevel],
+        className,
+        styles.heading
+      )}
       {...props.tagProps}
     >
       {children}

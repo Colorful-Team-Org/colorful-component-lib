@@ -18,7 +18,8 @@ const meta = {
       href: 'https://www.google.com',
     },
     image: {
-      src: 'https://picsum.photos/1280/768',
+      url: 'https://picsum.photos/1280/768',
+      contentType: 'image/jpeg',
     },
   },
 } satisfies Meta<typeof PageHero>;
@@ -28,8 +29,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {
-    inverted: false,
-  },
   render: args => <PageHero {...args}>This is the content section of the Hero component</PageHero>,
 };
