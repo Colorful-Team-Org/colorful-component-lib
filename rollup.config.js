@@ -8,7 +8,7 @@ import postcss from 'rollup-plugin-postcss';
 
 const packageJson = require('./package.json');
 
-export default [
+const rollupConfig = [
   {
     input: 'src/index.ts',
     output: [
@@ -48,3 +48,4 @@ export default [
     plugins: [dts.default()],
   },
 ];
+export default rollupConfig;

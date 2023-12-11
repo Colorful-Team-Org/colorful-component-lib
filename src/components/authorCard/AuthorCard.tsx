@@ -1,10 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Image, { ImageProps } from '../image/Image';
-const styles = {
-  authorCard: 'inline-flex min-w-[14rem] font-sans',
-  metaData: 'ml-3',
-};
+import styles from './AuthorCard.module.css';
 export type AuthorProps = {
   name: string;
   role?: string | null;

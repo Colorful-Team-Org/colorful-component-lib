@@ -3,3 +3,7 @@ declare module '*.svg' {
   export default src;
 }
 declare module 'tailwind.plugin';
+declare module '*.css' {
+  const content: Record<string, string>;
+  export default content;
+}
