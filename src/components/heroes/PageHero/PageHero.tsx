@@ -29,46 +29,74 @@ export default function PageHero(props: PropsWithChildren<Props>) {
     headline,
     image,
     cta,
-    heroSize: fullHeight,
+    heroSize: heroSizeBoolean,
     className,
     focalPoint,
-    imageStyle: imageStyleFullWidth,
+    imageStyle: imageStyleBoolean,
     children,
     colorPalette,
   } = props;
   const isVideo = image?.url && image?.contentType?.includes('video');
-  const isImage = image?.url && image?.contentType?.includes('image');
 
   const { backgroundStyles, headlineStyles, buttonStyles, bodyTextStyles } =
     getStylesConfigFromPalette(colorPalette || '');
 
-  // These are set up awkwardly in contentful
-  const fullWidth = !imageStyleFullWidth;
+  const imageStyle = imageStyleBoolean ? 'partial' : 'full';
+  const heroSize =
+    heroSizeBoolean === null || heroSizeBoolean === true ? 'full_screen' : 'fixed_height';
+
+  const hasFullSizeBgImage = imageStyle === 'full';
+  const hasPartialSizeBgImage = imageStyle === 'partial';
 
   return (
     <div
       className={clsx(
         styles.pageHero,
         className,
-        fullHeight && styles.fullHeight,
-        fullWidth && styles.fullImage
+        heroSize === 'full_screen' && styles.fullHeight,
+        !image?.url && [styles.noImage, backgroundStyles]
       )}
+      style={{ backgroundImage: !isVideo && !hasPartialSizeBgImage ? `url(${image?.url})` : '' }}
     >
-      <div className={clsx(styles.bgWrapper)}>
-        {isImage && <img src={image!.url} alt={headline} />}
-        {isVideo && (
-          <video className={styles.videoBg} muted loop autoPlay>
-            <source src={image!.url as string} />
-          </video>
+      <div
+        className={clsx(
+          styles.contentWrapper,
+          hasPartialSizeBgImage && styles.partialBg,
+          heroSize === 'fixed_height' && styles.fixedHeight
+        )}
+      >
+        <div
+          className={clsx(
+            styles.content,
+            hasFullSizeBgImage ? styles.centeredContent : styles.leftContent,
+            heroSize === 'fixed_height' && backgroundStyles
+          )}
+        >
+          {headline && <h1 className={headlineStyles}>{headline}</h1>}
+          {children && <div className={clsx(styles.bodyText, bodyTextStyles)}>{children}</div>}
+        </div>
+        {hasPartialSizeBgImage && (
+          <div
+            className={styles.imageWrapper}
+            style={{
+              backgroundImage: !isVideo ? `url(${image?.url})` : '',
+            }}
+          ></div>
         )}
       </div>
-      <div className={clsx(styles.contentWrapper, !fullWidth && backgroundStyles)}>
-        <Heading lvl={2} className={headlineStyles}>
-          {props.headline}
-        </Heading>
-        <div className={bodyTextStyles}>{children}</div>
-      </div>
-      <div className={clsx(styles.opaque, backgroundStyles)}></div>
+      {isVideo && (
+        <video autoPlay muted loop>
+          <source src={image?.url} type={image?.contentType} />
+        </video>
+      )}
+
+      <div
+        className={clsx(
+          styles.opaque,
+          backgroundStyles,
+          (hasPartialSizeBgImage || heroSize === 'fixed_height') && 'hidden'
+        )}
+      ></div>
     </div>
   );
 }

@@ -30,6 +30,7 @@ const rollupConfig = [
       }),
       postcss({
         extensions: ['.css'],
+        output: 'lib/style.css',
         minimize: true,
         extract: true,
         config: {
