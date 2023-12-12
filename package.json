@@ -2,9 +2,8 @@
   "name": "@colorful-team-org/colorful-component-lib",
   "version": "0.1.6",
   "license": "unlicensed",
-  "main": "lib/cjs/index.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "module": "lib/esm/index.js",
   "files": [
     "./lib/**/*"
   ],

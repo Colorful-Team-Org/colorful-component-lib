@@ -11,23 +11,23 @@ const packageJson = require('./package.json');
 const rollupConfig = [
   {
     input: 'src/index.ts',
-    output: [
-      {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: true,
-      },
-      {
-        file: packageJson.module,
-        format: 'esm',
-        sourcemap: true,
-      },
-    ],
+    output: {
+      // file: packageJson.module,
+      dir: 'lib',
+      format: 'esm',
+      sourcemap: true,
+      exports: 'named',
+    },
     plugins: [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        tsconfig: './tsconfig.json',
+        declarationDir: 'lib',
+        declaration: true,
+        exclude: ['**/*.stories.tsx', 'node_modules'],
+      }),
       postcss({
         extensions: ['.css'],
         minimize: true,

@@ -10,7 +10,7 @@
     "declaration": true,
     "declarationDir": "types",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "lib",
     "moduleResolution": "node",
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
