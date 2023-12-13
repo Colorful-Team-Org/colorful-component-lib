@@ -66,11 +66,11 @@
   @apply m-4 lg:my-16;
 }
 .contentWrapper .content h1 {
+  @apply text-4xl;
   @apply mb-5;
 }
 .contentWrapper .content {
-  @apply text-base md:text-xl;
-  @apply leading-7;
+  @apply text-base md:text-2xl;
 }
 .contentWrapper.fixedHeight .content {
   @apply text-base;

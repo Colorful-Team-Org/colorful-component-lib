@@ -17,6 +17,7 @@ export interface ImageProps {
   className?: string;
   tagProps?: any;
   contentType: string | null;
+  description?: string | null;
   loader?: (options: { src: string; width: number; quality?: number }) => string;
 }
 export default function Image(props: ImageProps) {

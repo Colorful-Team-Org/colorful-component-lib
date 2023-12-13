@@ -1,24 +1,23 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
-import Image, { ImageProps } from '../../image/Image';
-// import { CtfImage, CtfRichtext } from 'features/contentful-api/graphql/contentful-graphql-types';
-// import { RichText } from 'features/ctf-richtext/components/RichText';
+import { ImageProps } from '../../image/Image';
+
 import Button from '../../button/Button';
-import Heading from '../../heading/Heading';
 
 import styles from './PageHero.module.css';
 import { getStylesConfigFromPalette } from './palette-styles';
 
 interface Props {
   headline: string | null;
-  image: Omit<ImageProps, 'sizes'> | null;
-  ctaText: string | null;
-  heroSize: boolean | null;
+  image?: Omit<ImageProps, 'sizes'> | null;
+  ctaText?: string | null;
+  heroSize?: boolean | null;
   className?: string;
-  focalPoint: { focalPoint: { x: number; y: number } } | null;
-  imageStyle: boolean | null;
-  colorPalette: string | null;
+  focalPoint?: { focalPoint: { x: number; y: number } } | null;
+  imageStyle?: boolean | null;
+  colorPalette?: string | null;
+  href?: string | null;
 }
 
 export default function PageHero(props: PropsWithChildren<Props>) {
@@ -26,6 +25,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
     headline,
     image,
     ctaText,
+    href,
     heroSize: heroSizeBoolean,
     className,
     focalPoint,
@@ -50,7 +50,6 @@ export default function PageHero(props: PropsWithChildren<Props>) {
       return null;
 
     const { x, y } = focalPoint.focalPoint;
-    console.log(x, y);
 
     return [(x / image.width) * 100, (y / image.height) * 100] as [number, number];
   }, [focalPoint, image]);
@@ -83,7 +82,20 @@ export default function PageHero(props: PropsWithChildren<Props>) {
           )}
         >
           {headline && <h1 className={headlineStyles}>{headline}</h1>}
-          {children && <div className={clsx(styles.bodyText, bodyTextStyles)}>{children}</div>}
+          {children && (
+            <div className={clsx(styles.bodyText, bodyTextStyles)}>
+              {children}
+              {href && (
+                <Button
+                  className={clsx(heroSize !== 'fixed_height' ? 'mt-10' : 'mt-5', buttonStyles)}
+                  href={href}
+                  size={heroSize !== 'fixed_height' ? 'large' : 'medium'}
+                >
+                  {ctaText ?? 'Click Me!'}
+                </Button>
+              )}
+            </div>
+          )}
         </div>
         {hasPartialSizeBgImage && (
           <div

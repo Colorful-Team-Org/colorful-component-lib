@@ -1,5 +1,4 @@
 .heading {
-  @apply font-headline;
   @apply font-bold;
 }
 .h1 {
