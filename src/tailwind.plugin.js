@@ -7,6 +7,16 @@ module.exports = plugin(null, {
         sans: ['Roboto', 'sans-serif'],
         headline: ['Archivo', 'sans-serif'],
       },
+      container: {
+        center: true,
+        screens: {
+          sm: '600px',
+          md: '728px',
+          lg: '1024px',
+          xl: '1120px',
+          '2xl': '1280px',
+        },
+      },
       colors: {
         'cf-black': '#101827',
         'cf-primary': '#000',

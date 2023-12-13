@@ -2,19 +2,16 @@ import React from 'react';
 import { PropsWithChildren } from 'react';
 import { ImageProps } from '../../image/Image';
 interface Props {
-    headline?: string;
-    image?: Omit<ImageProps, 'sizes'>;
-    cta: {
-        text: string;
-        href?: string;
-    };
-    heroSize?: boolean;
+    headline: string | null;
+    image: Omit<ImageProps, 'sizes'> | null;
+    ctaText: string | null;
+    heroSize: boolean | null;
     className?: string;
-    focalPoint?: {
+    focalPoint: {
         x: number;
         y: number;
-    };
-    imageStyle?: boolean;
+    } | null;
+    imageStyle: boolean | null;
     colorPalette?: string;
 }
 export default function PageHero(props: PropsWithChildren<Props>): React.JSX.Element;

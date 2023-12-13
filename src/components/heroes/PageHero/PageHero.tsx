@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 import Image, { ImageProps } from '../../image/Image';
@@ -11,24 +11,21 @@ import styles from './PageHero.module.css';
 import { getStylesConfigFromPalette } from './palette-styles';
 
 interface Props {
-  headline?: string;
-  image?: Omit<ImageProps, 'sizes'>;
-  cta: {
-    text: string;
-    href?: string;
-  };
-  heroSize?: boolean;
+  headline: string | null;
+  image: Omit<ImageProps, 'sizes'> | null;
+  ctaText: string | null;
+  heroSize: boolean | null;
   className?: string;
-  focalPoint?: { x: number; y: number };
-  imageStyle?: boolean;
-  colorPalette?: string;
+  focalPoint: { focalPoint: { x: number; y: number } } | null;
+  imageStyle: boolean | null;
+  colorPalette: string | null;
 }
 
 export default function PageHero(props: PropsWithChildren<Props>) {
   const {
     headline,
     image,
-    cta,
+    ctaText,
     heroSize: heroSizeBoolean,
     className,
     focalPoint,
@@ -48,6 +45,16 @@ export default function PageHero(props: PropsWithChildren<Props>) {
   const hasFullSizeBgImage = imageStyle === 'full';
   const hasPartialSizeBgImage = imageStyle === 'partial';
 
+  const focalPointStyle = useMemo(() => {
+    if (!focalPoint || !focalPoint.focalPoint || !image || !image?.width || !image.height)
+      return null;
+
+    const { x, y } = focalPoint.focalPoint;
+    console.log(x, y);
+
+    return [(x / image.width) * 100, (y / image.height) * 100] as [number, number];
+  }, [focalPoint, image]);
+
   return (
     <div
       className={clsx(
@@ -56,7 +63,10 @@ export default function PageHero(props: PropsWithChildren<Props>) {
         heroSize === 'full_screen' && styles.fullHeight,
         !image?.url && [styles.noImage, backgroundStyles]
       )}
-      style={{ backgroundImage: !isVideo && !hasPartialSizeBgImage ? `url(${image?.url})` : '' }}
+      style={{
+        backgroundImage: !isVideo && !hasPartialSizeBgImage ? `url(${image?.url})` : '',
+        backgroundPosition: focalPointStyle?.map(p => `${p}%`).join(' ') ?? 'center',
+      }}
     >
       <div
         className={clsx(
@@ -80,13 +90,16 @@ export default function PageHero(props: PropsWithChildren<Props>) {
             className={styles.imageWrapper}
             style={{
               backgroundImage: !isVideo ? `url(${image?.url})` : '',
+              backgroundPosition: focalPointStyle?.map(p => `${p}%`).join(' ') ?? 'center',
             }}
           ></div>
         )}
+
+        <div className={clsx(styles.opaque, backgroundStyles, 'md:hidden')}></div>
       </div>
-      {isVideo && (
+      {isVideo && image?.url && (
         <video autoPlay muted loop>
-          <source src={image?.url} type={image?.contentType} />
+          <source src={image?.url} type={image?.contentType ?? undefined} />
         </video>
       )}
 
