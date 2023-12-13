@@ -5,6 +5,7 @@ type ContentProps = PropsWithChildren<{
     name?: string | null;
     shortDescription?: string | null;
     featuredImage?: Omit<ImageProps, 'sizes'> | null;
+    className?: string;
 }>;
 declare const PageContent: (props: ContentProps) => React.JSX.Element;
 export default PageContent;

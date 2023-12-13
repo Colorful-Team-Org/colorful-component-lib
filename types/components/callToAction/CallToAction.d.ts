@@ -7,5 +7,5 @@ type Props = {
     colorPalette?: string | null;
     className?: string;
 };
-export default function CTA(props: PropsWithChildren<Props>): React.JSX.Element;
-export {};
+declare const CallToAction: (props: PropsWithChildren<Props>) => React.JSX.Element;
+export default CallToAction;

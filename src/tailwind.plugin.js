@@ -1,6 +1,8 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = plugin(null, {
+  content: './components/**/*.{html,js,jsx,ts,tsx}',
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
   theme: {
     extend: {
       container: {

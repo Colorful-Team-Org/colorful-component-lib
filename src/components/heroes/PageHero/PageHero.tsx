@@ -6,7 +6,7 @@ import { ImageProps } from '../../image/Image';
 import Button from '../../button/Button';
 
 import styles from './PageHero.module.css';
-import { getStylesConfigFromPalette } from './palette-styles';
+import { getStylesConfigFromPalette } from '../../../palette-styles';
 
 interface Props {
   headline: string | null;

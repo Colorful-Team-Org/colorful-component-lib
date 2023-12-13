@@ -1,8 +1,19 @@
 {
-  "extends": ["eslint:recommended", "react-app", "plugin:react-hooks/recommended", "prettier"],
-  "plugins": ["prettier", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "react-app",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "react-hooks"
+  ],
   "rules": {
-    "prettier/prettier": ["warn"]
+    "prettier/prettier": [
+      "warn"
+    ]
   },
   "parserOptions": {
     "sourceType": "module",
