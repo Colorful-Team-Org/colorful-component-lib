@@ -1,13 +1,13 @@
 import React from 'react';
 import { CSSProperties } from 'react';
 export interface ImageProps {
-    title?: string;
-    url?: string;
+    title?: string | null;
+    url: string | null;
     srcSet?: string;
     sizes?: string;
     alt?: string;
-    width?: number;
-    height?: number;
+    width: number | null;
+    height: number | null;
     unoptimized?: boolean;
     focalPoint?: {
         x: number;
@@ -18,7 +18,8 @@ export interface ImageProps {
     loadingSkeleton?: boolean;
     className?: string;
     tagProps?: any;
-    contentType?: string;
+    contentType: string | null;
+    description?: string | null;
     loader?: (options: {
         src: string;
         width: number;

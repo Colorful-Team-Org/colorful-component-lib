@@ -11,6 +11,7 @@ export { default as HeaderSection } from './headerSection/HeaderSection';
 export { default as Duplex } from './duplex/Duplex';
 export { default as CTA } from './cta/CTA';
 export { default as Testimonial } from './testimonial/Testimonial';
+export { default as PageContent } from './pageContent/PageContent';
 export * from './blogPostCard';
 export * from './grid';
 export * from './form';
