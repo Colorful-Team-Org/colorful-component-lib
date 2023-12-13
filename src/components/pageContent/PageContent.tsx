@@ -7,7 +7,7 @@ import styles from './PageContent.module.css';
 type ContentProps = PropsWithChildren<{
   name?: string | null;
   shortDescription?: string | null;
-  featuredImage?: Omit<ImageProps, 'sizes'>;
+  featuredImage?: Omit<ImageProps, 'sizes'> | null;
 }>;
 
 const PageContent = (props: ContentProps) => {
