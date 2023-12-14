@@ -1,11 +1,12 @@
 .cta {
-  @apply py-24; 
+  @apply py-24;
+  @apply mt-16;
 }
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @apply gap-8;
+  @apply gap-4;
 }
 .headline {
   @apply text-4xl font-bold;

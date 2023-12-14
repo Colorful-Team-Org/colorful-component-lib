@@ -4,8 +4,6 @@
   @apply focus:ring-neutral-500;
   @apply inline-flex;
   @apply items-center;
-  @apply border;
-  @apply border-transparent;
   @apply font-sans;
   @apply font-medium;
   @apply text-white;

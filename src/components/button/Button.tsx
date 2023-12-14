@@ -11,9 +11,10 @@ type Props = PropsWithChildren<{
   href?: string | null;
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
+  LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 }>;
 export default function Button(props: Props) {
-  const { size, inverted, className, href, onClick, children } = props;
+  const { size, inverted, className, href, onClick, children, LinkComponent } = props;
 
   const computedStyles = clsx(
     styles.button,
@@ -26,6 +27,10 @@ export default function Button(props: Props) {
     <button type="button" className={computedStyles} onClick={onClick}>
       {children}
     </button>
+  ) : LinkComponent ? (
+    <LinkComponent href={href} className={computedStyles}>
+      {children}
+    </LinkComponent>
   ) : (
     <a href={href} className={computedStyles}>
       {children}

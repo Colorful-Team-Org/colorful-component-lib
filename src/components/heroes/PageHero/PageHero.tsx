@@ -18,6 +18,7 @@ interface Props {
   imageStyle?: boolean | null;
   colorPalette?: string | null;
   href?: string | null;
+  LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 }
 
 export default function PageHero(props: PropsWithChildren<Props>) {
@@ -32,6 +33,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
     imageStyle: imageStyleBoolean,
     children,
     colorPalette,
+    LinkComponent,
   } = props;
   const isVideo = image?.url && image?.contentType?.includes('video');
 
@@ -90,6 +92,7 @@ export default function PageHero(props: PropsWithChildren<Props>) {
                   className={clsx(heroSize !== 'fixed_height' ? 'mt-10' : 'mt-5', buttonStyles)}
                   href={href}
                   size={heroSize !== 'fixed_height' ? 'large' : 'medium'}
+                  LinkComponent={LinkComponent}
                 >
                   {ctaText ?? 'Click Me!'}
                 </Button>

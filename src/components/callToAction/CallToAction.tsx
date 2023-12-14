@@ -12,11 +12,11 @@ type Props = {
   ctaText?: string | null;
   colorPalette?: string | null;
   className?: string;
+  LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 };
 
 const CallToAction = (props: PropsWithChildren<Props>) => {
-  const { headline, href, ctaText, colorPalette, className, children } = props;
-
+  const { headline, href, ctaText, colorPalette, className, children, LinkComponent } = props;
   const { backgroundStyles, headlineStyles, buttonStyles, bodyTextStyles } =
     getStylesConfigFromPalette(colorPalette || '');
 
@@ -30,6 +30,7 @@ const CallToAction = (props: PropsWithChildren<Props>) => {
             href={href}
             className={clsx(styles.button, buttonStyles, 'bg-transparent')}
             size="large"
+            LinkComponent={LinkComponent}
           >
             {ctaText}
           </Button>

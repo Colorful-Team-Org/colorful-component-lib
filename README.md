@@ -29,11 +29,11 @@ This library comes with a tailwindcss plugin which sets some defaults. Also you 
 module.exports = {
   content: [
     //..
-    './node_modules/cf-colorful-component-library/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@colorful-team-org/colorful-component-lib/lib/**/*.{js,ts,jsx,tsx}',
   ],
   plugins: [
     //..
-    require('cf-colorful-component-library').tailwindPlugin
+    require('@colorful-team-org/colorful-component-lib').tailwindPlugin
   ],
 };
 ```
