@@ -6,6 +6,7 @@ type Props = {
     ctaText?: string | null;
     colorPalette?: string | null;
     className?: string;
+    LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 };
 declare const CallToAction: (props: PropsWithChildren<Props>) => React.JSX.Element;
 export default CallToAction;

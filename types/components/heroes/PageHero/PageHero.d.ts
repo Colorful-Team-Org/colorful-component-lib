@@ -16,6 +16,7 @@ interface Props {
     imageStyle?: boolean | null;
     colorPalette?: string | null;
     href?: string | null;
+    LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 }
 export default function PageHero(props: PropsWithChildren<Props>): React.JSX.Element;
 export {};
