@@ -6,8 +6,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @apply gap-4;
+  @apply gap-5;
 }
 .headline {
   @apply text-4xl font-bold;
+}
+h2 {
+  @apply m-0;
 }

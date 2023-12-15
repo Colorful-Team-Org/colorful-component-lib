@@ -73,8 +73,8 @@
     "watch": "rollup -c -w --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "build:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css",
-    "watch:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.css --watch"
+    "build:tailwind": "tailwindcss build src/styles/tailwind.css -o ./.storybook/tailwind.css",
+    "watch:tailwind": "tailwindcss build src/styles/tailwind.css -o ./.storybook/tailwind.css --watch"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

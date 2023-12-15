@@ -6,7 +6,6 @@
   @apply items-center;
   @apply font-sans;
   @apply font-medium;
-  @apply text-white;
   @apply shadow-sm;
   @apply focus:outline-none;
   @apply focus:ring-2;
@@ -19,7 +18,7 @@
   @apply text-base;
 }
 .button.large {
-  @apply px-8 py-4;
+  @apply px-8 py-2;
   @apply text-xl;
 }
 

@@ -17,7 +17,7 @@ const paletteStyles: { [key: string]: StyleConfigInterface } = {
     bodyTextStyles: 'text-accent-7',
     backgroundStyles: 'bg-cf-palette__light-gray',
     buttonStyles:
-      'border-2 border-black hover:bg-black hover:text-ctf-pallete__light-gray active:text-ctf-pallete__light-gray active:bg-black focus:shadow-lg transform transition-transform focus:-translate-y-1',
+      'border-2 border-black hover:bg-black hover:text-ctf-palette__light-gray active:text-ctf-palette__light-gray active:bg-black focus:shadow-lg transform transition-transform focus:-translate-y-1',
   },
   'palette-3. Gray (#BABABA)': {
     headlineStyles: 'text-white',
@@ -50,7 +50,7 @@ const paletteStyles: { [key: string]: StyleConfigInterface } = {
   'palette-7. Gold Sand (#E8B894)': {
     headlineStyles: 'text-black',
     bodyTextStyles: 'text-black',
-    backgroundStyles: 'bg-cf-pallete__gold-sand',
+    backgroundStyles: 'bg-cf-palette__gold-sand',
     buttonStyles:
       'border-2 border-black text-black hover:bg-black hover:text-white active:text-black active:bg-gray-100 focus:shadow-lg transform transition-transform focus:-translate-y-1',
   },
