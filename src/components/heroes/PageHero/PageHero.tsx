@@ -8,7 +8,7 @@ import Button from '../../button/Button';
 import styles from './PageHero.module.css';
 import { getStylesConfigFromPalette } from '../../../palette-styles';
 
-interface Props {
+export type PageHeroProps = {
   headline: string | null;
   image?: Omit<ImageProps, 'sizes'> | null;
   ctaText?: string | null;
@@ -19,9 +19,9 @@ interface Props {
   colorPalette?: string | null;
   href?: string | null;
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
-}
+};
 
-export default function PageHero(props: PropsWithChildren<Props>) {
+export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
   const {
     headline,
     image,

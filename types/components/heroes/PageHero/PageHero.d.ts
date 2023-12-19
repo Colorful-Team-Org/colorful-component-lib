@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropsWithChildren } from 'react';
 import { ImageProps } from '../../image/Image';
-interface Props {
+export type PageHeroProps = {
     headline: string | null;
     image?: Omit<ImageProps, 'sizes'> | null;
     ctaText?: string | null;
@@ -17,6 +17,5 @@ interface Props {
     colorPalette?: string | null;
     href?: string | null;
     LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
-}
-export default function PageHero(props: PropsWithChildren<Props>): React.JSX.Element;
-export {};
+};
+export default function PageHero(props: PropsWithChildren<PageHeroProps>): React.JSX.Element;
