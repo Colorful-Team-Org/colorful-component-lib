@@ -1,0 +1,69 @@
+.mosaic {
+  width: 100%;
+  display: block;
+  min-height: 200px;
+  
+  @apply max-h-[700px];
+  @apply md:grid;
+  @apply sm:grid-cols-1;
+  @apply gap-5;
+}
+.mosaicItem {
+  @apply min-h-[200px] bg-gray-800;
+}
+
+.mosaic > div {
+  overflow: hidden;
+
+  @apply h-72;
+  @apply md:h-auto;
+  @apply mb-5;
+  @apply md:mb-0;
+  @apply relative;
+}
+
+.mosaic > div:last-of-type {
+  @apply mb-0;
+}
+
+.mosaicContainer > h2 {
+  text-align: center;
+
+  @apply text-5xl;
+  @apply w-full;
+  @apply mb-10;
+  @apply font-bold;
+}
+
+.mosaic > div figcaption {
+  position: absolute;
+  background: #fff;
+  font-style: normal;
+
+  @apply rounded-sm;
+  @apply shadow-sm;
+  @apply font-semibold;
+  @apply py-2 px-4;
+  @apply bottom-3;
+  @apply left-3;
+}
+
+.mosaic.anchoredLeft > div:first-child {
+  @apply md:row-span-2;
+}
+.mosaic.anchoredRight > div:first-child{
+  @apply md:row-span-2 md:col-start-2 md:row-start-1;
+}
+.mosaic.anchoredMid > div:first-child {
+  @apply md:col-start-1;
+}
+
+.mosaic > div img {
+  @apply object-cover w-full h-full;
+  @apply rounded-md;
+  @apply transition-all;
+}
+
+.mosaic > div a:hover + img {
+  transform: scale(1.05);
+}

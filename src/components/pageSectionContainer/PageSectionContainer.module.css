@@ -1,0 +1,7 @@
+.pageSection {
+  min-height: 200px;
+
+  @apply px-5;
+  @apply py-10;
+  @apply md:px-0;
+}

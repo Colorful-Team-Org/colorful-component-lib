@@ -1,0 +1,35 @@
+.duplex {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contentContainer {
+  display: block;
+  align-items: center;
+
+  @apply px-10;
+  @apply md:px-0;
+  @apply md:flex md:text-left;
+  @apply py-20;
+  @apply gap-16;
+}
+.content h2, .content h1 {
+  @apply text-4xl;
+  @apply mb-5;
+}
+.bodyText {
+  @apply text-xl;
+}
+.content {
+  flex: 1;
+}
+.imageContainer {
+  width: 100%;
+  @apply max-w-xl;
+  @apply mb-5;
+  @apply md:w-1/2;
+}
+
+.imageContainer img {
+  @apply rounded-md;
+}

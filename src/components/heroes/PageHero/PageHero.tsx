@@ -80,7 +80,7 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
           className={clsx(
             styles.content,
             hasFullSizeBgImage ? styles.centeredContent : styles.leftContent,
-            heroSize === 'fixed_height' && backgroundStyles
+            (heroSize === 'fixed_height' || hasPartialSizeBgImage) && backgroundStyles
           )}
         >
           {headline && <h1 className={headlineStyles}>{headline}</h1>}
@@ -117,7 +117,6 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
           <source src={image?.url} type={image?.contentType ?? undefined} />
         </video>
       )}
-
       <div
         className={clsx(
           styles.opaque,

@@ -9,6 +9,7 @@
   @apply bg-center;
   @apply container;
   @apply mx-auto;
+  @apply w-full;
 }
 .pageHero.fullHeight {
   min-height: calc(100vh - 80px);
