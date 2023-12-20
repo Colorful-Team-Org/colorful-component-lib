@@ -1,5 +1,13 @@
 import React from 'react';
 import { PropsWithChildren } from 'react';
-type Props = {};
-export default function Duplex(props: PropsWithChildren<Props>): React.JSX.Element;
-export {};
+import { ImageProps } from '../image/Image';
+export type DuplexProps = {
+    containerLayout?: boolean | null;
+    colorPalette?: string | null;
+    ctaText?: string | null;
+    headline?: string | null;
+    href?: string | null;
+    image?: Omit<ImageProps, 'sizes'> | null;
+    LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
+};
+export default function Duplex(props: PropsWithChildren<DuplexProps>): React.JSX.Element;

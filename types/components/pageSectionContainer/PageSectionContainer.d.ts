@@ -1,9 +1,7 @@
 import React from 'react';
-import { CSSProperties, PropsWithChildren } from 'react';
-type Props = PropsWithChildren<{
+import { PropsWithChildren } from 'react';
+export type PageSectionProps = PropsWithChildren<{
     className?: string;
-    style?: CSSProperties;
-    withYMargin?: boolean;
+    colorPalette?: string | null;
 }>;
-export default function PageSectionContainer(props: Props): React.JSX.Element;
-export {};
+export default function PageSectionContainer(props: PageSectionProps): React.JSX.Element;

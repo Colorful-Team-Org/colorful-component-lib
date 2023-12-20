@@ -26,11 +26,7 @@ export default function Testimonial(props: PropsWithChildren<Props>) {
   const textColorClass = props.textColor ?? isInverted ? 'text-white' : 'text-gray-900';
 
   return (
-    <PageSectionContainer
-      className="cful-testimonial-root pb-20 pt-16 font-sans lg:pb-28 lg:pt-24"
-      withYMargin={!props.backgroundColor}
-      style={{ backgroundColor: props.backgroundColor }}
-    >
+    <PageSectionContainer className="cful-testimonial-root pb-20 pt-16 font-sans lg:pb-28 lg:pt-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-0">
         {!!props.logo && (
           <Image
