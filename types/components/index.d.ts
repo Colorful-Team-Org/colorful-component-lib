@@ -5,6 +5,7 @@ export * from './heroes';
 export * from './duplex';
 export * from './pageSectionContainer';
 export * from './mosaic';
+export * from './infoBlock';
 export { default as Image } from './image/Image';
 export * from './image/Image';
 export { default as AuthorCard } from './authorCard/AuthorCard';

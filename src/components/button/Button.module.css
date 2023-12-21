@@ -23,7 +23,6 @@
 }
 
 .button.inverted {
-  @apply bg-white;
-  @apply text-cf-primary;
-  @apply hover:bg-cf-primary-invert
+  @apply bg-neutral-800;
+  @apply text-white;
 }

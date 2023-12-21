@@ -1,0 +1,56 @@
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  
+  @apply gap-4;
+}
+.infoImage {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  @apply mx-auto;
+}
+.infoImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card {
+  overflow: hidden;
+  height: 100%;
+  flex: 1;
+
+  @apply bg-white;
+  @apply shadow-md;
+  @apply rounded-md;
+  @apply flex;
+  @apply flex-col;
+  @apply gap-4;
+}
+.cardImage {
+  overflow: hidden;
+  @apply h-60;
+}
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card .infoContent > div:last-child:has(a), .card .infoContent > div:last-child:has(button) {
+  @apply mt-auto;
+}
+.card .infoContent > div:last-child a,.card .infoContent > div:last-child button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.card .infoContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  @apply p-4;
+  @apply pt-0;
+}

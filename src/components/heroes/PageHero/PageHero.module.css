@@ -20,7 +20,7 @@
   display: flex;
   position: relative;
   z-index: 1;
-  @apply max-w-2xl;
+  @apply max-w-3xl;
   @apply mx-auto;
 }
 .contentWrapper.partialBg {
@@ -63,11 +63,11 @@
   position: static;
   height: auto;
   @apply p-4;
-  @apply w-full md:max-w-lg;
+  @apply w-full md:max-w-2xl;
   @apply m-4 lg:my-16;
 }
 .contentWrapper .content h1 {
-  @apply text-4xl;
+  @apply text-5xl;
   @apply mb-5;
 }
 .contentWrapper .content {
@@ -77,7 +77,7 @@
   @apply text-base;
 }
 .contentWrapper.fixedHeight .content h1 {
-  @apply text-3xl;
+  @apply text-4xl;
   @apply mb-5;
 }
 .imageWrapper {

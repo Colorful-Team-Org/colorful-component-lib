@@ -29,7 +29,6 @@
 .mosaicContainer > h2 {
   text-align: center;
 
-  @apply text-5xl;
   @apply w-full;
   @apply mb-10;
   @apply font-bold;

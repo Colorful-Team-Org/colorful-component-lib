@@ -68,6 +68,12 @@ const paletteStyles: { [key: string]: StyleConfigInterface } = {
     buttonStyles:
       'border-2 border-black text-black hover:bg-black hover:text-white active:text-black active:bg-gray-100 focus:shadow-lg transform transition-transform focus:-translate-y-1',
   },
+  'palette-10. No Styles': {
+    headlineStyles: '',
+    bodyTextStyles: '',
+    backgroundStyles: 'bg-transparent',
+    buttonStyles: '',
+  },
 };
 
 export const getStylesConfigFromPalette = (palette: string): StyleConfigInterface => {
