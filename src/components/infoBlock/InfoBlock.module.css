@@ -48,7 +48,6 @@
   text-align: center;
 }
 .card .infoContent {
-  height: 100%;
   display: flex;
   flex-direction: column;
   @apply p-4;

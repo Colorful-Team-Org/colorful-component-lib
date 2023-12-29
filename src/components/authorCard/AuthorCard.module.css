@@ -1,20 +1,27 @@
 .authorCard {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 
   @apply min-w-[14rem];
-  @apply font-sans;
+  @apply gap-3;
 }
 
 .authorCard > img {
   @apply w-11 h-11 rounded-full; 
 }
 
-.authorCard .metaData p{
-  @apply font-medium;
+.authorCard .metaData {
+  display: flex;
+  flex-direction: column
+}
+.authorCard .metaData {
+  @apply font-semibold;
   @apply text-gray-700;
 }
 
-.authorCard .metaData p span {
+.authorCard .metaData .role {
   @apply font-normal;
   @apply text-gray-500;
+  @apply text-sm;
+  @apply italic;
 }

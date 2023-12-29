@@ -11,14 +11,23 @@ export type InfoBlockProps = PropsWithChildren<{
   imageRound?: boolean;
   center?: boolean;
   card?: boolean;
+  className?: string;
 }>;
 
 const InfoBlock = (props: InfoBlockProps) => {
-  const { headline, image, children, center = false, imageRound = true, card = false } = props;
+  const {
+    headline,
+    image,
+    children,
+    center = false,
+    imageRound = true,
+    card = false,
+    className,
+  } = props;
 
   if (card) {
     return (
-      <div className={styles.card}>
+      <div className={clsx(styles.card, className)}>
         <div className={styles.cardImage}>
           <img src={image?.url ?? undefined} alt={image?.alt} />
         </div>

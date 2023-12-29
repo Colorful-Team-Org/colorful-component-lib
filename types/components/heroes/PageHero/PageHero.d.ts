@@ -17,5 +17,6 @@ export type PageHeroProps = {
     colorPalette?: string | null;
     href?: string | null;
     LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
+    fullWidth?: boolean | null;
 };
 export default function PageHero(props: PropsWithChildren<PageHeroProps>): React.JSX.Element;

@@ -19,6 +19,7 @@ export type PageHeroProps = {
   colorPalette?: string | null;
   href?: string | null;
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
+  fullWidth?: boolean | null;
 };
 
 export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
@@ -33,6 +34,7 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
     imageStyle: imageStyleBoolean,
     children,
     colorPalette,
+    fullWidth,
     LinkComponent,
   } = props;
   const isVideo = image?.url && image?.contentType?.includes('video');
@@ -62,7 +64,8 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
         styles.pageHero,
         className,
         heroSize === 'full_screen' && styles.fullHeight,
-        !image?.url && [styles.noImage, backgroundStyles]
+        !image?.url && [styles.noImage, backgroundStyles],
+        fullWidth && 'md:max-w-full'
       )}
       style={{
         backgroundImage: !isVideo && !hasPartialSizeBgImage ? `url(${image?.url})` : '',

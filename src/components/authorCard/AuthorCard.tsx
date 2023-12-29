@@ -13,10 +13,8 @@ export default function AuthorCard(props: AuthorProps) {
     <div className={clsx(styles.authorCard, props.className)}>
       <Image loadingSkeleton {...props.image} sizes="100px" />
       <div className={styles.metaData}>
-        <p>
-          {props.name}
-          {props.role && <span>{props.role}</span>}
-        </p>
+        <span>{props.name}</span>
+        {props.role && <span className={styles.role}>{props.role}</span>}
       </div>
     </div>
   );
