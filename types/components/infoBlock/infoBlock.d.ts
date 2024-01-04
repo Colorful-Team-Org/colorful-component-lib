@@ -6,6 +6,7 @@ export type InfoBlockProps = PropsWithChildren<{
     imageRound?: boolean;
     center?: boolean;
     card?: boolean;
+    className?: string;
 }>;
 declare const InfoBlock: (props: InfoBlockProps) => React.JSX.Element;
 export default InfoBlock;

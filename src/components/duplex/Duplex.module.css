@@ -13,6 +13,9 @@
   @apply py-20;
   @apply gap-16;
 }
+.contentContainer.reverse {
+  flex-direction: row-reverse;
+}
 .content h2, .content h1 {
   @apply text-4xl;
   @apply mb-5;

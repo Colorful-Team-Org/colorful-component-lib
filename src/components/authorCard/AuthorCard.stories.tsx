@@ -9,7 +9,10 @@ const meta = {
     name: 'John Doe',
     role: 'Software Engineer',
     image: {
-      src: 'https://picsum.photos/1024/768',
+      url: 'https://picsum.photos/1024/768',
+      width: 1024,
+      height: 768,
+      contentType: 'image/jpeg',
     },
   },
 } satisfies Meta<typeof AuthorCard>;

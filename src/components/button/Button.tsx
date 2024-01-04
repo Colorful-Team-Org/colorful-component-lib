@@ -15,14 +15,12 @@ type Props = PropsWithChildren<{
 }>;
 export default function Button(props: Props) {
   const { size, inverted, className, href, onClick, children, LinkComponent } = props;
-
   const computedStyles = clsx(
     styles.button,
     inverted && styles.inverted,
     styles[size ?? 'medium'],
     className
   );
-
   return !href ? (
     <button type="button" className={computedStyles} onClick={onClick}>
       {children}

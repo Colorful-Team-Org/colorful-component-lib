@@ -25,14 +25,12 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
   const { backgroundStyles, headlineStyles, buttonStyles, bodyTextStyles } =
     getStylesConfigFromPalette(colorPalette || '');
 
+  console.log(props);
+
   return (
     <div className={clsx(styles.duplex, backgroundStyles)}>
       <div
-        className={clsx(
-          'container',
-          styles.contentContainer,
-          containerLayout && 'flex-row-reverse'
-        )}
+        className={clsx('container', styles.contentContainer, containerLayout && styles.reverse)}
       >
         {image && (
           <div className={styles.imageContainer}>
@@ -40,7 +38,7 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
           </div>
         )}
         <div className={styles.content}>
-          {headline && <h2 className={headlineStyles}>Test</h2>}
+          {headline && <h2 className={headlineStyles}>{headline}</h2>}
           <div className={clsx(styles.bodyText, bodyTextStyles)}>{children}</div>
           {href && (
             <Button

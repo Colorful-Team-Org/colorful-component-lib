@@ -9,10 +9,40 @@ const meta = {
     headline: 'This is a headline',
     children: 'This is the content section of the Duplex component',
     image: {
-      src: 'https://picsum.photos/1280/768',
+      url: 'https://picsum.photos/1280/768',
+      width: 1280,
+      height: 768,
+      contentType: 'image/jpeg',
     },
-    cta: {
-      text: 'Call to action',
+    ctaText: 'Call to action',
+    href: '#',
+  },
+  argTypes: {
+    containerLayout: {
+      defaultValue: false,
+      control: {
+        type: 'boolean',
+        default: false,
+      },
+    },
+    colorPalette: {
+      defaultValue: '',
+      control: {
+        type: 'select',
+        default: '',
+      },
+      options: [
+        '',
+        '1. White (#FFFFFF)',
+        '2. Light Gray (#F4F4F4)',
+        '3. Gray (#BABABA)',
+        '4. Black (#000000)',
+        '5. Midnight Green (#0C445C)',
+        '6. Vermilion Red (#EA6558)',
+        '7. Gold Sand (#E8B894)',
+        '8. Pine Green (#118367)',
+        '9. Yellow (#F7C35C)',
+      ],
     },
   },
 } satisfies Meta<typeof Duplex>;
@@ -22,12 +52,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  render: args => <Duplex {...args}>This is the content section of the Duplex component</Duplex>,
-};
-export const Inverted: Story = {
-  args: {
-    alignImageLeft: true,
-    backgroundColor: '#414a50',
-  },
   render: args => <Duplex {...args}>This is the content section of the Duplex component</Duplex>,
 };

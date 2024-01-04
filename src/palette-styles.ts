@@ -17,7 +17,7 @@ const paletteStyles: { [key: string]: StyleConfigInterface } = {
     bodyTextStyles: 'text-accent-7',
     backgroundStyles: 'bg-cf-palette__light-gray',
     buttonStyles:
-      'border-2 border-black hover:bg-black hover:text-ctf-palette__light-gray active:text-ctf-palette__light-gray active:bg-black focus:shadow-lg transform transition-transform focus:-translate-y-1',
+      'border-2 border-black hover:bg-black hover:text-neutral-600 active:text-neutral-600 active:bg-black focus:shadow-lg transform transition-transform focus:-translate-y-1',
   },
   'palette-3. Gray (#BABABA)': {
     headlineStyles: 'text-white',
