@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 
@@ -11,6 +11,7 @@ type Props = PropsWithChildren<{
   href?: string | null;
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
+  style?: CSSProperties;
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 }>;
 export default function Button(props: Props) {
