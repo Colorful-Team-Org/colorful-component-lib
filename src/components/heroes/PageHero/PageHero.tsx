@@ -83,7 +83,8 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
           className={clsx(
             styles.content,
             hasFullSizeBgImage ? styles.centeredContent : styles.leftContent,
-            (heroSize === 'fixed_height' || hasPartialSizeBgImage) && backgroundStyles
+            (heroSize === 'fixed_height' || hasPartialSizeBgImage) && backgroundStyles,
+            bodyTextStyles
           )}
         >
           {headline && <h1 className={headlineStyles}>{headline}</h1>}
