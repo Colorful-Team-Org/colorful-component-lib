@@ -6,10 +6,11 @@ import clsx from 'clsx';
 export type MosaicProps = {
   anchorRight?: boolean | null;
   headline?: string | null;
+  className?: string;
 };
 
 const Mosaic = (props: PropsWithChildren<MosaicProps>) => {
-  const { children, anchorRight, headline } = props;
+  const { children, anchorRight, headline, className } = props;
   const childCount = Children.count(children);
 
   let colsClass = useMemo(() => {
@@ -27,7 +28,7 @@ const Mosaic = (props: PropsWithChildren<MosaicProps>) => {
   }, [childCount]);
 
   return (
-    <div className={styles.mosaicContainer}>
+    <div className={clsx(styles.mosaicContainer, className)}>
       {headline && <h2>{headline}</h2>}
       <div
         className={clsx(

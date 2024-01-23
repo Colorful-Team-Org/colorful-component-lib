@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useMemo } from 'react';
 
 import { ImageProps } from '../image/Image';
 import clsx from 'clsx';
@@ -24,6 +24,13 @@ const InfoBlock = (props: InfoBlockProps) => {
     card = false,
     className,
   } = props;
+  // console.log('InfoBlock', props);
+
+  const imgWidth = useMemo(() => {
+    if (!image?.width) return undefined;
+
+    return `${image.width}px`;
+  }, [image?.width]);
 
   if (card) {
     return (
@@ -42,7 +49,10 @@ const InfoBlock = (props: InfoBlockProps) => {
   return (
     <div className={clsx(styles.infoBlock, center && 'text-center')}>
       {image && (
-        <div className={clsx(styles.infoImage, imageRound ? 'rounded-full' : 'rounded-md')}>
+        <div
+          className={clsx(styles.infoImage, imageRound ? 'rounded-full' : 'rounded-md')}
+          style={{ width: imgWidth, height: imgWidth }}
+        >
           <img src={image?.url ?? undefined} alt={image?.alt} />
         </div>
       )}
