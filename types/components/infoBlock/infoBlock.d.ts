@@ -4,6 +4,7 @@ export type InfoBlockProps = PropsWithChildren<{
     headline?: string;
     image?: Omit<ImageProps, 'sizes'> | null;
     imageRound?: boolean;
+    imageShape?: 'icon' | 'avatar' | 'card';
     center?: boolean;
     card?: boolean;
     className?: string;

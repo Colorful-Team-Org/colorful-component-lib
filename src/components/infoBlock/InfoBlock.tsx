@@ -9,6 +9,7 @@ export type InfoBlockProps = PropsWithChildren<{
   headline?: string;
   image?: Omit<ImageProps, 'sizes'> | null;
   imageRound?: boolean;
+  imageShape?: 'icon' | 'avatar' | 'card';
   center?: boolean;
   card?: boolean;
   className?: string;
@@ -21,8 +22,8 @@ const InfoBlock = (props: InfoBlockProps) => {
     children,
     center = false,
     imageRound = true,
-    card = false,
     className,
+    imageShape,
   } = props;
   // console.log('InfoBlock', props);
 
@@ -32,7 +33,7 @@ const InfoBlock = (props: InfoBlockProps) => {
     return `${image.width}px`;
   }, [image?.width]);
 
-  if (card) {
+  if (imageShape === 'card') {
     return (
       <div className={clsx(styles.card, className)}>
         <div className={styles.cardImage}>
@@ -46,11 +47,22 @@ const InfoBlock = (props: InfoBlockProps) => {
     );
   }
 
+  if (imageShape === 'icon') {
+    return (
+      <div className={clsx(styles.infoBlock, styles.icon)}>
+        <div className={styles.iconImage} style={{ width: imgWidth }}>
+          <img src={image?.url ?? undefined} alt={image?.alt} />
+        </div>
+        {headline && <h2 className={styles.infoHeadline}>{headline}</h2>}
+      </div>
+    );
+  }
+
   return (
     <div className={clsx(styles.infoBlock, center && 'text-center')}>
       {image && (
         <div
-          className={clsx(styles.infoImage, imageRound ? 'rounded-full' : 'rounded-md')}
+          className={clsx(styles.infoImage, imageRound && 'rounded-full')}
           style={{ width: imgWidth, height: imgWidth }}
         >
           <img src={image?.url ?? undefined} alt={image?.alt} />

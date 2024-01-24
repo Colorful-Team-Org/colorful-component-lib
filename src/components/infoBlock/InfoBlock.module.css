@@ -23,6 +23,7 @@
   flex: 1;
 
   @apply bg-white;
+  @apply text-neutral-800;
   @apply shadow-md;
   @apply rounded-md;
   @apply flex;
@@ -52,4 +53,17 @@
   flex-direction: column;
   @apply p-4;
   @apply pt-0;
+}
+
+.infoBlock.icon{
+  flex-direction: row;
+  align-items: center;
+}
+.infoBlock.icon h2 {
+  margin-bottom: 0;
+  @apply text-base;
+}
+
+.iconImage {
+  width: 50px;
 }
