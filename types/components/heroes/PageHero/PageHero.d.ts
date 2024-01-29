@@ -18,5 +18,6 @@ export type PageHeroProps = {
     href?: string | null;
     LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
     fullWidth?: boolean | null;
+    textAlignment?: 'left' | 'center' | 'right';
 };
 export default function PageHero(props: PropsWithChildren<PageHeroProps>): React.JSX.Element;

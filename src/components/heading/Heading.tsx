@@ -1,9 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
-import styles from './Heading.module.css';
-
-export const marginClasses = ['mb-5', 'mb-5', 'mb-5', '', '', ''];
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -17,6 +14,16 @@ interface Props {
 
   tagProps?: any;
 }
+
+const marginClasses = ['mb-5', 'mb-5', 'mb-5', '', '', ''];
+const styles = {
+  h1: 'text-5xl font-bold',
+  h2: 'text-4xl font-bold',
+  h3: 'text-3xl font-bold',
+  h4: 'text-2xl font-bold',
+  h5: 'text-xl font-bold',
+  h6: 'text-lg font-bold',
+};
 export default function Heading(props: PropsWithChildren<Props>) {
   const { lvl = 1, className, margin, children } = props;
   const tagLevel = props.tagLvl || lvl;
@@ -24,12 +31,7 @@ export default function Heading(props: PropsWithChildren<Props>) {
   const Tag: any = `h${tagLevel}`;
   return (
     <Tag
-      className={clsx(
-        styles[`h${tagLevel}`],
-        margin && marginClasses[classLevel],
-        className,
-        styles.heading
-      )}
+      className={clsx(styles[`h${tagLevel}`], margin && marginClasses[classLevel], className)}
       {...props.tagProps}
     >
       {children}

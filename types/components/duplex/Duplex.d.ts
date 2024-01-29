@@ -3,6 +3,7 @@ import { PropsWithChildren } from 'react';
 import { ImageProps } from '../image/Image';
 export type DuplexProps = {
     containerLayout?: boolean | null;
+    buttonVariant?: 'primary' | 'secondary' | 'tertiary';
     colorPalette?: string | null;
     ctaText?: string | null;
     headline?: string | null;

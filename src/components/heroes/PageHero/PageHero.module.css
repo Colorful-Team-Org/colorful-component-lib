@@ -16,6 +16,10 @@
 
   @apply max-w-none;
 }
+.pageHero.fullHeight .content {
+  align-items: center;
+  justify-content: center;
+}
 .contentWrapper {
   display: flex;
   position: relative;

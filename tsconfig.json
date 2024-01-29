@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/tailwind.plugin.js", "./index.d.ts", "src/**/*.css"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/tailwind.plugin.js", "src/colorful-preset.js", "./index.d.ts", "src/**/*.css"],
   "exclude": ["src/**/*.test.*","src/**/*.stories.*" ],
   "compilerOptions": {
     "esModuleInterop": true,

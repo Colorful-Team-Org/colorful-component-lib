@@ -2,7 +2,6 @@ import React from 'react';
 
 import { PropsWithChildren } from 'react';
 
-import styles from './Duplex.module.css';
 import clsx from 'clsx';
 import { getStylesConfigFromPalette } from '../../palette-styles';
 import { Button } from '../button';
@@ -10,6 +9,7 @@ import { ImageProps } from '../image/Image';
 
 export type DuplexProps = {
   containerLayout?: boolean | null;
+  buttonVariant?: 'primary' | 'secondary' | 'tertiary';
   colorPalette?: string | null;
   ctaText?: string | null;
   headline?: string | null;
@@ -19,30 +19,48 @@ export type DuplexProps = {
 };
 export default function Duplex(props: PropsWithChildren<DuplexProps>) {
   // console.log('Duplex', props);
-  const { containerLayout, colorPalette, LinkComponent, ctaText, headline, children, href, image } =
-    props;
+  const {
+    containerLayout,
+    colorPalette,
+    LinkComponent,
+    ctaText,
+    headline,
+    children,
+    href,
+    image,
+    buttonVariant,
+  } = props;
 
-  const { backgroundStyles, headlineStyles, buttonStyles, bodyTextStyles } =
-    getStylesConfigFromPalette(colorPalette || '');
-
-  console.log(props);
+  const { backgroundStyles, headlineStyles, bodyTextStyles } = getStylesConfigFromPalette(
+    colorPalette || ''
+  );
 
   return (
-    <div className={clsx(styles.duplex, backgroundStyles)}>
+    <div className={clsx('w-full', backgroundStyles)}>
       <div
-        className={clsx('container', styles.contentContainer, containerLayout && styles.reverse)}
+        className={clsx(
+          'container',
+          'block items-center gap-16 px-10 py-20 md:flex md:px-0 md:text-left',
+          containerLayout && 'flex-row-reverse'
+        )}
       >
         {image && (
-          <div className={styles.imageContainer}>
-            <img src={image?.url ?? ''} width="100%" alt={image?.alt ?? headline ?? ''} />
+          <div className="w-full max-w-xl">
+            <img
+              src={image?.url ?? ''}
+              width="100%"
+              alt={image?.alt ?? headline ?? ''}
+              className="rounded-md"
+            />
           </div>
         )}
-        <div className={styles.content}>
+        <div className="mb-5 max-w-xl flex-1 md:w-1/2">
           {headline && <h2 className={headlineStyles}>{headline}</h2>}
-          <div className={clsx(styles.bodyText, bodyTextStyles)}>{children}</div>
+          <div className={clsx('text-xl', bodyTextStyles)}>{children}</div>
           {href && (
             <Button
-              className={clsx(buttonStyles, 'mt-5')}
+              className={clsx('mt-5')}
+              variant={buttonVariant ?? 'primary'}
               href={href.startsWith('/') ? href : `/${href}`}
               LinkComponent={LinkComponent}
               size="large"

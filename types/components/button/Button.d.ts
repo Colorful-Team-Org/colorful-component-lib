@@ -6,6 +6,7 @@ type Props = PropsWithChildren<{
     className?: string;
     href?: string | null;
     type?: 'button' | 'submit' | 'reset';
+    variant?: 'primary' | 'secondary' | 'tertiary';
     onClick?: () => void;
     style?: CSSProperties;
     LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
