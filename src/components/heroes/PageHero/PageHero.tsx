@@ -20,6 +20,7 @@ export type PageHeroProps = {
   href?: string | null;
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
   fullWidth?: boolean | null;
+  textAlignment?: 'left' | 'center' | 'right';
 };
 
 export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
@@ -36,6 +37,7 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
     colorPalette,
     fullWidth,
     LinkComponent,
+    textAlignment = 'left',
   } = props;
   const isVideo = image?.url && image?.contentType?.includes('video');
 
@@ -48,6 +50,7 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
 
   const hasFullSizeBgImage = imageStyle === 'full';
   const hasPartialSizeBgImage = imageStyle === 'partial';
+  const textAlignmentClass = `text-${textAlignment}`;
 
   const focalPointStyle = useMemo(() => {
     if (!focalPoint || !focalPoint.focalPoint || !image || !image?.width || !image.height)
@@ -84,7 +87,8 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
             styles.content,
             hasFullSizeBgImage ? styles.centeredContent : styles.leftContent,
             (heroSize === 'fixed_height' || hasPartialSizeBgImage) && backgroundStyles,
-            bodyTextStyles
+            bodyTextStyles,
+            textAlignmentClass
           )}
         >
           {headline && <h1 className={headlineStyles}>{headline}</h1>}
