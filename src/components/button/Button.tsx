@@ -11,6 +11,7 @@ type Props = PropsWithChildren<{
   variant?: 'primary' | 'secondary' | 'tertiary';
   onClick?: () => void;
   style?: CSSProperties;
+  rounded?: boolean;
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 }>;
 
@@ -22,9 +23,19 @@ const variantStyles = {
 };
 
 export default function Button(props: Props) {
-  const { size, variant = 'primary', className, href, onClick, children, LinkComponent } = props;
+  const {
+    size,
+    variant = 'primary',
+    className,
+    href,
+    onClick,
+    children,
+    LinkComponent,
+    rounded = true,
+  } = props;
   const computedStyles = clsx(
-    'rounded-md py-2 px-4 focus:ring-neutral-500 inline-flex items-center font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all',
+    rounded && 'rounded-md',
+    'py-2 px-4 focus:ring-neutral-500 inline-flex items-center font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all',
     variantStyles[variant],
     variantStyles[size ?? 'medium'],
     className

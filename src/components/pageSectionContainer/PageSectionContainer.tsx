@@ -17,7 +17,7 @@ export default function PageSectionContainer(props: PageSectionProps) {
       className={clsx(
         className,
         backgroundStyles,
-        'min-h-[200px]',
+        'min-h-[100px]',
         useDefaultStyles && 'px-5 py-10',
         'md:px-0',
         bodyTextStyles

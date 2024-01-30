@@ -1,5 +1,5 @@
 import * as colorfulPreset from './colorful-preset';
 import * as tailwindPlugin from './tailwind.plugin';
-export { colorfulPreset };
-export { tailwindPlugin };
+import { getStylesConfigFromPalette } from './palette-styles';
+export { colorfulPreset, tailwindPlugin, getStylesConfigFromPalette };
 export * from './components';

@@ -18,6 +18,7 @@ export type DuplexProps = {
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
   className?: string;
   useDefaultStyles?: boolean;
+  hideCta?: boolean;
 };
 export default function Duplex(props: PropsWithChildren<DuplexProps>) {
   // console.log('Duplex', props);
@@ -33,6 +34,7 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
     buttonVariant,
     className,
     useDefaultStyles = true,
+    hideCta = false,
   } = props;
 
   const { backgroundStyles, headlineStyles, bodyTextStyles } = getStylesConfigFromPalette(
@@ -43,9 +45,10 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
     <div className={clsx('w-full', backgroundStyles)}>
       <div
         className={clsx(
+          className,
           'container',
-          'block items-center gap-16',
-          useDefaultStyles && 'px-10 py-20',
+          'block gap-16',
+          useDefaultStyles && 'p-5',
           'md:flex md:px-0 md:text-left',
           containerLayout && 'flex-row-reverse'
         )}
@@ -63,7 +66,7 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
         <div className="mb-5 max-w-xl flex-1 md:w-1/2">
           {headline && <h2 className={headlineStyles}>{headline}</h2>}
           <div className={clsx('text-xl', bodyTextStyles)}>{children}</div>
-          {href && (
+          {href && !hideCta && (
             <Button
               className={clsx('mt-5')}
               variant={buttonVariant ?? 'primary'}
