@@ -3,7 +3,6 @@ import { ImageProps } from '../image/Image';
 export type InfoBlockProps = PropsWithChildren<{
     headline?: string;
     image?: Omit<ImageProps, 'sizes'> | null;
-    imageRound?: boolean;
     imageShape?: 'icon' | 'avatar' | 'card';
     center?: boolean;
     card?: boolean;

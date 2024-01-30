@@ -16,6 +16,8 @@ export type DuplexProps = {
   href?: string | null;
   image?: Omit<ImageProps, 'sizes'> | null;
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
+  className?: string;
+  useDefaultStyles?: boolean;
 };
 export default function Duplex(props: PropsWithChildren<DuplexProps>) {
   // console.log('Duplex', props);
@@ -29,6 +31,8 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
     href,
     image,
     buttonVariant,
+    className,
+    useDefaultStyles = true,
   } = props;
 
   const { backgroundStyles, headlineStyles, bodyTextStyles } = getStylesConfigFromPalette(
@@ -40,7 +44,9 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
       <div
         className={clsx(
           'container',
-          'block items-center gap-16 px-10 py-20 md:flex md:px-0 md:text-left',
+          'block items-center gap-16',
+          useDefaultStyles && 'px-10 py-20',
+          'md:flex md:px-0 md:text-left',
           containerLayout && 'flex-row-reverse'
         )}
       >
