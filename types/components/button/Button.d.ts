@@ -9,6 +9,7 @@ type Props = PropsWithChildren<{
     variant?: 'primary' | 'secondary' | 'tertiary';
     onClick?: () => void;
     style?: CSSProperties;
+    rounded?: boolean;
     LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
 }>;
 export default function Button(props: Props): React.JSX.Element;

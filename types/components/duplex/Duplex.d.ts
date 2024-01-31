@@ -12,5 +12,6 @@ export type DuplexProps = {
     LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
     className?: string;
     useDefaultStyles?: boolean;
+    hideCta?: boolean;
 };
 export default function Duplex(props: PropsWithChildren<DuplexProps>): React.JSX.Element;

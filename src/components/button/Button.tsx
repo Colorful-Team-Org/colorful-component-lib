@@ -32,6 +32,7 @@ export default function Button(props: Props) {
     children,
     LinkComponent,
     rounded = true,
+    style,
   } = props;
   const computedStyles = clsx(
     rounded && 'rounded-md',
@@ -42,15 +43,15 @@ export default function Button(props: Props) {
   );
 
   return !href ? (
-    <button type="button" className={computedStyles} onClick={onClick}>
+    <button type="button" className={computedStyles} onClick={onClick} style={style}>
       {children}
     </button>
   ) : LinkComponent ? (
-    <LinkComponent href={href} className={computedStyles}>
+    <LinkComponent href={href} className={computedStyles} style={style}>
       {children}
     </LinkComponent>
   ) : (
-    <a href={href} className={computedStyles}>
+    <a href={href} className={computedStyles} style={style}>
       {children}
     </a>
   );
