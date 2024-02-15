@@ -19,5 +19,6 @@ export type PageHeroProps = {
     LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
     fullWidth?: boolean | null;
     textAlignment?: 'left' | 'center' | 'right';
+    buttonClassName?: string;
 };
 export default function PageHero(props: PropsWithChildren<PageHeroProps>): React.JSX.Element;
