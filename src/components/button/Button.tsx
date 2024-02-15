@@ -16,7 +16,7 @@ type Props = PropsWithChildren<{
 }>;
 
 const variantStyles = {
-  primary: 'bg-primary-400 text-white transition-colors hover:bg-primary-500',
+  primary: 'bg-primary-400 transition-colors hover:bg-primary-500',
   small: 'px-2.5 py-1.5 text-base',
   medium: 'px-4 py-2 text-lg',
   large: 'px-8 py-3 text-xl',

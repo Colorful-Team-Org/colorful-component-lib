@@ -47,9 +47,9 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
         className={clsx(
           className,
           'container',
-          'block gap-16',
+          'gap-16',
           useDefaultStyles && 'p-5',
-          'md:flex md:px-0 md:text-left',
+          'flex flex-col items-center md:px-0 lg:flex-row lg:text-left',
           containerLayout && 'flex-row-reverse'
         )}
       >
@@ -72,7 +72,7 @@ export default function Duplex(props: PropsWithChildren<DuplexProps>) {
               variant={buttonVariant ?? 'primary'}
               href={href.startsWith('/') ? href : `/${href}`}
               LinkComponent={LinkComponent}
-              size="large"
+              size="medium"
             >
               {ctaText ?? 'Click Me'}
             </Button>

@@ -21,6 +21,7 @@ export type PageHeroProps = {
   LinkComponent?: PropsWithChildren<React.ForwardRefExoticComponent<any>>;
   fullWidth?: boolean | null;
   textAlignment?: 'left' | 'center' | 'right';
+  buttonClassName?: string;
 };
 
 export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
@@ -38,11 +39,13 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
     fullWidth,
     LinkComponent,
     textAlignment = 'left',
+    buttonClassName,
   } = props;
   const isVideo = image?.url && image?.contentType?.includes('video');
 
   const { backgroundStyles, headlineStyles, buttonStyles, bodyTextStyles } =
     getStylesConfigFromPalette(colorPalette || '');
+  console.log(buttonClassName ? buttonClassName : buttonStyles);
 
   const imageStyle = imageStyleBoolean ? 'partial' : 'full';
   const heroSize =
@@ -97,7 +100,10 @@ export default function PageHero(props: PropsWithChildren<PageHeroProps>) {
               {children}
               {href && (
                 <Button
-                  className={clsx(heroSize !== 'fixed_height' ? 'mt-10' : 'mt-5', buttonStyles)}
+                  className={clsx(
+                    heroSize !== 'fixed_height' ? 'mt-10' : 'mt-5',
+                    buttonClassName ? buttonClassName : buttonStyles
+                  )}
                   href={href}
                   size={heroSize !== 'fixed_height' ? 'large' : 'medium'}
                   LinkComponent={LinkComponent}
